@@ -1,0 +1,419 @@
+from __future__ import annotations
+
+import argparse
+import json
+from pathlib import Path
+
+from cpo.council_final.workflow import (
+    DEFAULT_LLAMA_MODEL,
+    DEFAULT_MEDGEMMA_MODEL,
+    DEFAULT_QWEN_MODEL,
+    run_council_final_target,
+)
+
+
+TARGETS = [
+    "T0016",
+    "T0036",
+    "T0052",
+    "T0058",
+    "T0080",
+    "T0081",
+    "T0124",
+    "T0125",
+]
+
+
+PROJECT_ROOT = (
+    Path(__file__)
+    .resolve()
+    .parents[1]
+)
+
+
+OUTPUT_DIR = (
+    PROJECT_ROOT
+    / "outputs"
+    / "reports"
+    / "council_final"
+)
+
+
+def save_json(
+    data,
+    path: Path,
+):
+    """
+    Save JSON output.
+    """
+
+    path.parent.mkdir(
+        parents=True,
+        exist_ok=True,
+    )
+
+    with path.open(
+        "w",
+        encoding="utf-8",
+    ) as handle:
+
+        json.dump(
+            data,
+            handle,
+            indent=2,
+            ensure_ascii=False,
+        )
+
+
+def run_one(
+    target_id: str,
+    *,
+    qwen_model: str,
+    medgemma_model: str,
+    llama_model: str,
+):
+    """
+    Run and save final council output for one target.
+    """
+
+    report = (
+        run_council_final_target(
+            target_id,
+
+            qwen_model=(
+                qwen_model
+            ),
+
+            medgemma_model=(
+                medgemma_model
+            ),
+
+            llama_model=(
+                llama_model
+            ),
+        )
+    )
+
+    output_path = (
+        OUTPUT_DIR
+        / (
+            f"{target_id}"
+            "_council_final_report.json"
+        )
+    )
+
+    save_json(
+        report,
+        output_path,
+    )
+
+    print(
+        "\nSaved:"
+    )
+
+    print(
+        output_path
+    )
+
+    return report
+
+
+def main():
+    parser = argparse.ArgumentParser(
+        description=(
+            "Run the final heterogeneous "
+            "three-model LLM council."
+        )
+    )
+
+    parser.add_argument(
+        "target_id",
+        nargs="?",
+        choices=TARGETS,
+    )
+
+    parser.add_argument(
+        "--all",
+        action="store_true",
+    )
+
+    parser.add_argument(
+        "--qwen-model",
+        default=(
+            DEFAULT_QWEN_MODEL
+        ),
+    )
+
+    parser.add_argument(
+        "--medgemma-model",
+        default=(
+            DEFAULT_MEDGEMMA_MODEL
+        ),
+    )
+
+    parser.add_argument(
+        "--llama-model",
+        default=(
+            DEFAULT_LLAMA_MODEL
+        ),
+    )
+
+    args = parser.parse_args()
+
+    if (
+        not args.all
+        and not args.target_id
+    ):
+
+        parser.error(
+            "Provide target_id or --all."
+        )
+
+    OUTPUT_DIR.mkdir(
+        parents=True,
+        exist_ok=True,
+    )
+
+    targets = (
+        TARGETS
+        if args.all
+        else [
+            args.target_id
+        ]
+    )
+
+    reports = []
+
+    errors = []
+
+    for index, target_id in enumerate(
+        targets,
+        start=1,
+    ):
+
+        print(
+            "\n"
+            + "#"
+            * 120
+        )
+
+        print(
+            f"FINAL COUNCIL TARGET "
+            f"{index}/{len(targets)}: "
+            f"{target_id}"
+        )
+
+        print(
+            "#"
+            * 120
+        )
+
+        try:
+
+            report = run_one(
+                target_id,
+
+                qwen_model=(
+                    args.qwen_model
+                ),
+
+                medgemma_model=(
+                    args.medgemma_model
+                ),
+
+                llama_model=(
+                    args.llama_model
+                ),
+            )
+
+            reports.append(
+                report
+            )
+
+        except Exception as error:
+
+            print(
+                "\nERROR:"
+            )
+
+            print(
+                f"{target_id}: "
+                f"{type(error).__name__}: "
+                f"{error}"
+            )
+
+            error_report = {
+                "target_id":
+                    target_id,
+
+                "status":
+                    "ERROR",
+
+                "error_type":
+                    type(error).__name__,
+
+                "error":
+                    str(error),
+            }
+
+            reports.append(
+                error_report
+            )
+
+            errors.append(
+                error_report
+            )
+
+            save_json(
+                error_report,
+
+                OUTPUT_DIR
+                / (
+                    f"{target_id}"
+                    "_council_final_error.json"
+                ),
+            )
+
+    # ========================================================
+    # COMBINED REPORT
+    # ========================================================
+
+    if args.all:
+
+        successful_reports = [
+            report
+            for report
+            in reports
+            if report.get(
+                "status"
+            )
+            != "ERROR"
+        ]
+
+        validated_reports = [
+            report
+            for report
+            in successful_reports
+            if (
+                report
+                .get(
+                    "validation",
+                    {}
+                )
+                .get(
+                    "consensus_matches_reference"
+                )
+                is True
+            )
+        ]
+
+        combined = {
+            "experiment":
+                "heterogeneous_llm_council_final",
+
+            "council_version":
+                "2.1",
+
+            "models": {
+                "investigator":
+                    args.qwen_model,
+
+                "biomedical_expert":
+                    args.medgemma_model,
+
+                "causal_critic":
+                    args.llama_model,
+            },
+
+            "targets":
+                TARGETS,
+
+            "summary": {
+                "total_targets":
+                    len(
+                        TARGETS
+                    ),
+
+                "successful_targets":
+                    len(
+                        successful_reports
+                    ),
+
+                "error_targets":
+                    len(
+                        errors
+                    ),
+
+                "consensus_matching_reference":
+                    len(
+                        validated_reports
+                    ),
+            },
+
+            "reports":
+                reports,
+        }
+
+        combined_path = (
+            OUTPUT_DIR
+            / "all_council_final_reports.json"
+        )
+
+        save_json(
+            combined,
+            combined_path,
+        )
+
+        print(
+            "\n"
+            + "=" * 120
+        )
+
+        print(
+            "FINAL ALL-PATIENT COUNCIL RUN COMPLETE"
+        )
+
+        print(
+            "=" * 120
+        )
+
+        print(
+            "\nSuccessful targets:",
+            len(
+                successful_reports
+            ),
+            "/",
+            len(
+                TARGETS
+            ),
+        )
+
+        print(
+            "Errors:",
+            len(
+                errors
+            ),
+        )
+
+        print(
+            "Consensus matching WGS reference:",
+            len(
+                validated_reports
+            ),
+            "/",
+            len(
+                successful_reports
+            ),
+        )
+
+        print(
+            "\nCombined report:"
+        )
+
+        print(
+            combined_path
+        )
+
+
+if __name__ == "__main__":
+    main()
