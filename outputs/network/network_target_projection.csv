@@ -1,0 +1,5 @@
+target_a,target_b,shared_evidence_sources,shared_top5_sources,shared_wgs_sources,shared_clonal_sources,shared_plasmid_sources,shared_source_nodes
+T0058,T0080,3,1,3,0,3,P:T0034; P:T0054; P:T0057
+T0080,T0081,4,1,2,0,0,P:T0054; P:T0057; P:T0068; P:T0073
+T0058,T0081,2,1,1,0,0,P:T0054; P:T0057
+T0052,T0124,1,1,0,0,0,P:T0042

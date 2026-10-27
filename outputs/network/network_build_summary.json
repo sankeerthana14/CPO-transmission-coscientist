@@ -1,0 +1,11 @@
+{
+  "n_nodes": 89,
+  "n_edges": 336,
+  "n_patient_source_nodes": 51,
+  "n_environment_source_nodes": 31,
+  "n_targets": 7,
+  "n_top5_edges": 24,
+  "n_wgs_edges": 14,
+  "n_clonal_edges": 3,
+  "n_plasmid_edges": 11
+}

@@ -1,0 +1,13 @@
+{
+  "n_candidate_edges": 336,
+  "n_evidence_edges_top5_or_wgs": 30,
+  "n_unique_source_nodes": 82,
+  "n_targets": 7,
+  "n_direct_wgs_edges": 14,
+  "n_clonal_edges": 3,
+  "n_plasmid_edges": 11,
+  "n_recurrent_top5_sources": 4,
+  "n_genomic_hub_sources": 4,
+  "n_target_pairs_sharing_evidence_source": 4,
+  "n_target_pairs_sharing_wgs_source": 3
+}

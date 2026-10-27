@@ -1,0 +1,8 @@
+target_id,patient_candidate_count,environment_candidate_count,patient_top5_count,environment_top5_count,patient_top5_rr_support,environment_top5_rr_support,rank_favoured_category,patient_wgs_link_count,environment_wgs_link_count,patient_clonal_link_count,patient_plasmid_link_count,environment_clonal_link_count,environment_plasmid_link_count,wgs_supported_source_category,network_interpretation,direct_wgs_linked_sources
+T0036,14,4,2,2,0.5333333333333333,1.5,ENVIRONMENT,0,0,0,0,0,0,NONE,ENVIRONMENT_RANK_FAVOURED_NO_DIRECT_WGS,
+T0052,18,5,2,2,1.25,0.8333333333333333,PATIENT,0,0,0,0,0,0,NONE,PATIENT_RANK_FAVOURED_NO_DIRECT_WGS,
+T0058,22,8,3,0,1.75,0.0,PATIENT,4,0,0,4,0,0,PATIENT,PATIENT_WGS_SUPPORTED,P:T0057 (3 d; plasmid); P:T0054 (6 d; plasmid); P:T0044 (59 d; plasmid); P:T0034 (153 d; plasmid)
+T0080,32,21,3,0,1.5833333333333333,0.0,PATIENT,7,0,0,7,0,0,PATIENT,PATIENT_WGS_SUPPORTED,P:T0082 (6 d; plasmid); P:T0076 (19 d; plasmid); P:T0054 (32 d; plasmid); P:T0073 (32 d; plasmid); P:T0068 (33 d; plasmid); P:T0057 (54 d; plasmid); P:T0034 (210 d; plasmid)
+T0081,31,17,3,0,1.7,0.0,PATIENT,2,0,2,0,0,0,PATIENT,PATIENT_WGS_SUPPORTED,P:T0054 (19 d; clonal); P:T0068 (20 d; clonal)
+T0124,51,31,2,2,0.5333333333333333,1.5,ENVIRONMENT,0,1,0,0,1,0,ENVIRONMENT,ENVIRONMENT_WGS_SUPPORTED,E:HTS-E186 (171 d; clonal)
+T0125,51,31,3,0,1.45,0.0,PATIENT,0,0,0,0,0,0,NONE,PATIENT_RANK_FAVOURED_NO_DIRECT_WGS,
