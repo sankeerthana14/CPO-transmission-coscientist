@@ -1,0 +1,13 @@
+{
+  "target_id": "T0058",
+  "assignment_id": "A2",
+  "assignment_code": "QLM",
+  "models_by_role": {
+    "investigator": "qwen3:8b",
+    "biomedical_expert": "llama3.1:8b",
+    "causal_critic": "medgemma1.5:4b"
+  },
+  "status": "ERROR",
+  "error_type": "RuntimeError",
+  "error": "medgemma1.5:4b failed to produce a valid CouncilVote for T0058: 1 validation error for CouncilVote\n  Invalid JSON: EOF while parsing a string at line 5 column 156 [type=json_invalid, input_value='{\\n  \"target_id\": \"T0058...4, T0057, T0034). While', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.13/v/json_invalid"
+}

@@ -1,0 +1,24 @@
+{
+  "n_acquisition_targets": 8,
+  "mechanism_counts": {
+    "NO_DIRECT_WGS_LINK": 3,
+    "PATIENT_ASSOCIATED_PLASMID": 2,
+    "UNRESOLVED_NO_TARGET_WGS": 1,
+    "PATIENT_ASSOCIATED_CLONAL": 1,
+    "ENVIRONMENT_ASSOCIATED_CLONAL": 1
+  },
+  "xgboost_augmented": {
+    "model": "AUGMENTED",
+    "pooled_auroc": 0.9632342277012329,
+    "pooled_auprc": 0.31122375738560243,
+    "mean_positive_target_auroc": 0.9556643433765155,
+    "mean_positive_target_auprc": 0.4356547619047619,
+    "mrr": 0.6875,
+    "hit_at_1": 0.5,
+    "hit_at_3": 0.75,
+    "hit_at_5": 1.0,
+    "recall_at_3": 0.4464285714285714,
+    "recall_at_5": 0.6071428571428572,
+    "median_best_positive_rank": 1.5
+  }
+}

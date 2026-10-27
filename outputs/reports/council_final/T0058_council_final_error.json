@@ -1,0 +1,6 @@
+{
+  "target_id": "T0058",
+  "status": "ERROR",
+  "error_type": "RuntimeError",
+  "error": "medgemma1.5:4b failed to produce a valid CouncilVote for T0058: 1 validation error for CouncilVote\n  Invalid JSON: EOF while parsing a string at line 4 column 116 [type=json_invalid, input_value='{\\n  \"mechanism\": \"PATIE...57, T0054, T0044, T0034', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.13/v/json_invalid"
+}

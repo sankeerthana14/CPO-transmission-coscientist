@@ -1,0 +1,7 @@
+assignment_id,assignment_code,original_assignment,investigator,biomedical_expert,causal_critic,completed_targets,error_targets,consensus_matching_reference,agreement_among_completed,end_to_end_agreement,unanimous_consensus,majority_consensus,no_consensus
+A1,QML,True,qwen3:8b,medgemma1.5:4b,llama3.1:8b,7,1,7,1.0,0.875,3,4,0
+A2,QLM,False,qwen3:8b,llama3.1:8b,medgemma1.5:4b,6,2,6,1.0,0.75,5,1,0
+A3,MQL,False,medgemma1.5:4b,qwen3:8b,llama3.1:8b,6,2,5,0.8333333333333334,0.625,2,4,0
+A4,MLQ,False,medgemma1.5:4b,llama3.1:8b,qwen3:8b,6,2,6,1.0,0.75,4,2,0
+A5,LQM,False,llama3.1:8b,qwen3:8b,medgemma1.5:4b,6,2,6,1.0,0.75,4,2,0
+A6,LMQ,False,llama3.1:8b,medgemma1.5:4b,qwen3:8b,7,1,7,1.0,0.875,5,2,0

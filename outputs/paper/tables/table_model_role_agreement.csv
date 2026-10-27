@@ -1,0 +1,10 @@
+model,role,available_votes,matches_reference,agreement_rate
+llama3.1:8b,biomedical_expert,12,12,1.0
+llama3.1:8b,causal_critic,13,7,0.5384615384615384
+llama3.1:8b,investigator,13,13,1.0
+medgemma1.5:4b,biomedical_expert,14,12,0.8571428571428571
+medgemma1.5:4b,causal_critic,12,10,0.8333333333333334
+medgemma1.5:4b,investigator,12,10,0.8333333333333334
+qwen3:8b,biomedical_expert,12,10,0.8333333333333334
+qwen3:8b,causal_critic,13,11,0.8461538461538461
+qwen3:8b,investigator,13,13,1.0

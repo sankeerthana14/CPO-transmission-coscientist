@@ -1,0 +1,10 @@
+feature,mean_absolute_shap
+same_exact_cp_gene_isolate,2.5469252571571572
+days_before_acquisition,0.5068490064857858
+same_cp_family_isolate,0.44796176555555556
+same_species_any,0.43561779009009016
+same_cp_family_gx,0.05282490193893894
+source_gx_family_count,0.0409068774332933
+same_st_any,0.022385714426026028
+source_is_environment,0.006512530253403404
+source_gx_positive,0.003952823420920921

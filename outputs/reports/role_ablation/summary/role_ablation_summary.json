@@ -1,0 +1,195 @@
+{
+  "analysis": "Complete 3! model-role assignment ablation",
+  "unique_clinical_targets": 8,
+  "models": [
+    "qwen3:8b",
+    "medgemma1.5:4b",
+    "llama3.1:8b"
+  ],
+  "roles": [
+    "investigator",
+    "biomedical_expert",
+    "causal_critic"
+  ],
+  "assignments_tested": 6,
+  "important_methodological_note": "The original model-role assignment was defined a priori. The remaining five permutations are sensitivity analyses and should not be used to select a new final configuration based solely on performance on these eight cases.",
+  "original_assignment": {
+    "assignment_id": "A1",
+    "assignment_code": "QML",
+    "original_assignment": true,
+    "investigator": "qwen3:8b",
+    "biomedical_expert": "medgemma1.5:4b",
+    "causal_critic": "llama3.1:8b",
+    "completed_targets": 7,
+    "error_targets": 1,
+    "consensus_matching_reference": 7,
+    "agreement_among_completed": 1.0,
+    "end_to_end_agreement": 0.875,
+    "unanimous_consensus": 3,
+    "majority_consensus": 4,
+    "no_consensus": 0
+  },
+  "assignment_results": [
+    {
+      "assignment_id": "A1",
+      "assignment_code": "QML",
+      "original_assignment": true,
+      "investigator": "qwen3:8b",
+      "biomedical_expert": "medgemma1.5:4b",
+      "causal_critic": "llama3.1:8b",
+      "completed_targets": 7,
+      "error_targets": 1,
+      "consensus_matching_reference": 7,
+      "agreement_among_completed": 1.0,
+      "end_to_end_agreement": 0.875,
+      "unanimous_consensus": 3,
+      "majority_consensus": 4,
+      "no_consensus": 0
+    },
+    {
+      "assignment_id": "A2",
+      "assignment_code": "QLM",
+      "original_assignment": false,
+      "investigator": "qwen3:8b",
+      "biomedical_expert": "llama3.1:8b",
+      "causal_critic": "medgemma1.5:4b",
+      "completed_targets": 6,
+      "error_targets": 2,
+      "consensus_matching_reference": 6,
+      "agreement_among_completed": 1.0,
+      "end_to_end_agreement": 0.75,
+      "unanimous_consensus": 5,
+      "majority_consensus": 1,
+      "no_consensus": 0
+    },
+    {
+      "assignment_id": "A3",
+      "assignment_code": "MQL",
+      "original_assignment": false,
+      "investigator": "medgemma1.5:4b",
+      "biomedical_expert": "qwen3:8b",
+      "causal_critic": "llama3.1:8b",
+      "completed_targets": 6,
+      "error_targets": 2,
+      "consensus_matching_reference": 5,
+      "agreement_among_completed": 0.8333333333333334,
+      "end_to_end_agreement": 0.625,
+      "unanimous_consensus": 2,
+      "majority_consensus": 4,
+      "no_consensus": 0
+    },
+    {
+      "assignment_id": "A4",
+      "assignment_code": "MLQ",
+      "original_assignment": false,
+      "investigator": "medgemma1.5:4b",
+      "biomedical_expert": "llama3.1:8b",
+      "causal_critic": "qwen3:8b",
+      "completed_targets": 6,
+      "error_targets": 2,
+      "consensus_matching_reference": 6,
+      "agreement_among_completed": 1.0,
+      "end_to_end_agreement": 0.75,
+      "unanimous_consensus": 4,
+      "majority_consensus": 2,
+      "no_consensus": 0
+    },
+    {
+      "assignment_id": "A5",
+      "assignment_code": "LQM",
+      "original_assignment": false,
+      "investigator": "llama3.1:8b",
+      "biomedical_expert": "qwen3:8b",
+      "causal_critic": "medgemma1.5:4b",
+      "completed_targets": 6,
+      "error_targets": 2,
+      "consensus_matching_reference": 6,
+      "agreement_among_completed": 1.0,
+      "end_to_end_agreement": 0.75,
+      "unanimous_consensus": 4,
+      "majority_consensus": 2,
+      "no_consensus": 0
+    },
+    {
+      "assignment_id": "A6",
+      "assignment_code": "LMQ",
+      "original_assignment": false,
+      "investigator": "llama3.1:8b",
+      "biomedical_expert": "medgemma1.5:4b",
+      "causal_critic": "qwen3:8b",
+      "completed_targets": 7,
+      "error_targets": 1,
+      "consensus_matching_reference": 7,
+      "agreement_among_completed": 1.0,
+      "end_to_end_agreement": 0.875,
+      "unanimous_consensus": 5,
+      "majority_consensus": 2,
+      "no_consensus": 0
+    }
+  ],
+  "model_role_results": [
+    {
+      "model": "llama3.1:8b",
+      "role": "biomedical_expert",
+      "available_votes": 12,
+      "matches_reference": 12,
+      "agreement_rate": 1.0
+    },
+    {
+      "model": "llama3.1:8b",
+      "role": "causal_critic",
+      "available_votes": 13,
+      "matches_reference": 7,
+      "agreement_rate": 0.5384615384615384
+    },
+    {
+      "model": "llama3.1:8b",
+      "role": "investigator",
+      "available_votes": 13,
+      "matches_reference": 13,
+      "agreement_rate": 1.0
+    },
+    {
+      "model": "medgemma1.5:4b",
+      "role": "biomedical_expert",
+      "available_votes": 14,
+      "matches_reference": 12,
+      "agreement_rate": 0.8571428571428571
+    },
+    {
+      "model": "medgemma1.5:4b",
+      "role": "causal_critic",
+      "available_votes": 12,
+      "matches_reference": 10,
+      "agreement_rate": 0.8333333333333334
+    },
+    {
+      "model": "medgemma1.5:4b",
+      "role": "investigator",
+      "available_votes": 12,
+      "matches_reference": 10,
+      "agreement_rate": 0.8333333333333334
+    },
+    {
+      "model": "qwen3:8b",
+      "role": "biomedical_expert",
+      "available_votes": 12,
+      "matches_reference": 10,
+      "agreement_rate": 0.8333333333333334
+    },
+    {
+      "model": "qwen3:8b",
+      "role": "causal_critic",
+      "available_votes": 13,
+      "matches_reference": 11,
+      "agreement_rate": 0.8461538461538461
+    },
+    {
+      "model": "qwen3:8b",
+      "role": "investigator",
+      "available_votes": 13,
+      "matches_reference": 13,
+      "agreement_rate": 1.0
+    }
+  ]
+}

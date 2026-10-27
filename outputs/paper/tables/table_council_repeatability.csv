@@ -1,0 +1,6 @@
+run,total_targets,completed_targets,error_targets,consensus_matching_reference,agreement_among_completed,end_to_end_agreement,unanimous_consensus,majority_consensus,no_consensus
+1,8,7,1,7,1.0,0.875,3,4,0
+2,8,7,1,7,1.0,0.875,3,4,0
+3,8,7,1,7,1.0,0.875,3,4,0
+4,8,7,1,7,1.0,0.875,3,4,0
+5,8,7,1,7,1.0,0.875,3,4,0

@@ -1,0 +1,347 @@
+{
+  "target_id": "T0124",
+  "experiment": "heterogeneous_llm_council_final",
+  "council_version": "2.1",
+  "created_at_utc": "2026-10-09T16:09:28.551401+00:00",
+  "models": {
+    "investigator": "qwen3:8b",
+    "biomedical_expert": "medgemma1.5:4b",
+    "causal_critic": "llama3.1:8b"
+  },
+  "generation_config": {
+    "temperature": 0,
+    "seed": 42,
+    "tool_calls": false,
+    "max_output_tokens": 700
+  },
+  "technical_change_from_v2": "target_id removed from LLM-generated schema and attached deterministically by Python",
+  "evidence_packet_sha256": "5a1cce4c900b3593099401d0388884840b33e67706bc2f4e0a7194dc4473215e",
+  "evidence_packet": {
+    "target_id": "T0124",
+    "acquisition": {
+      "SubjectID": "T0124",
+      "acquisition_date": "2022-09-15T00:00:00",
+      "lab_cp_gene": "VIM",
+      "genomics_species_st": "Pseudomonas aeruginosa_ST823",
+      "genomics_cp_gene": "blaVIM-2",
+      "has_culture_wgs": true,
+      "hospital": "T",
+      "wards": "5A",
+      "positive_sample_id": "HTS-S454",
+      "sample_schedule": "D0"
+    },
+    "decisive_wgs_summary": {
+      "target_wgs_available": true,
+      "total_direct_wgs_links": 1,
+      "prior_patient_clonal_links": 0,
+      "prior_patient_plasmid_links": 0,
+      "prior_environment_clonal_links": 1,
+      "prior_environment_plasmid_links": 0,
+      "wgs_status": "DIRECT_WGS_LINKS_PRESENT"
+    },
+    "direct_wgs_linked_sources": [
+      {
+        "source_type": "environment",
+        "source_subject_id": "T0060",
+        "source_sample_id": "HTS-E186",
+        "days_before_acquisition": 171.0,
+        "source_species": "Pseudomonas aeruginosa",
+        "source_st": "ST823",
+        "source_cp_gene": "blaVIM-2",
+        "same_exact_cp_gene": true,
+        "same_species": true,
+        "same_st": true,
+        "clonal_link": true,
+        "plasmid_link": false,
+        "shared_plasmid_cp_genes": null,
+        "hospital_match_status": "CONFIRMED"
+      }
+    ],
+    "xgboost_candidate_prioritisation": {
+      "important_note": "ranking_score is only a relative candidate-prioritisation score. It is NOT a calibrated probability of transmission.",
+      "top_5_unique_candidates": [
+        {
+          "rank": 1,
+          "source_type": "environment",
+          "source_subject_id": "T0084",
+          "source_sample_id": "HTS-E241",
+          "days_before_acquisition": 121.0,
+          "ranking_score": 0.67271,
+          "same_cp_family_gx": true,
+          "same_cp_family_isolate": true,
+          "same_exact_cp_gene": true,
+          "same_species": true,
+          "same_st": true
+        },
+        {
+          "rank": 2,
+          "source_type": "environment",
+          "source_subject_id": "T0060",
+          "source_sample_id": "HTS-E186",
+          "days_before_acquisition": 171.0,
+          "ranking_score": 0.67271,
+          "same_cp_family_gx": true,
+          "same_cp_family_isolate": true,
+          "same_exact_cp_gene": true,
+          "same_species": true,
+          "same_st": true
+        },
+        {
+          "rank": 3,
+          "source_type": "patient",
+          "source_subject_id": "T0114",
+          "source_sample_id": "HTS-S446",
+          "days_before_acquisition": 16.0,
+          "ranking_score": 0.033373,
+          "same_cp_family_gx": false,
+          "same_cp_family_isolate": false,
+          "same_exact_cp_gene": false,
+          "same_species": true,
+          "same_st": false
+        },
+        {
+          "rank": 4,
+          "source_type": "patient",
+          "source_subject_id": "T0114",
+          "source_sample_id": "HTS-S398",
+          "days_before_acquisition": 23.0,
+          "ranking_score": 0.031149,
+          "same_cp_family_gx": false,
+          "same_cp_family_isolate": false,
+          "same_exact_cp_gene": false,
+          "same_species": true,
+          "same_st": false
+        },
+        {
+          "rank": 5,
+          "source_type": "patient",
+          "source_subject_id": "T0042",
+          "source_sample_id": "HTS-P471",
+          "days_before_acquisition": 51.0,
+          "ranking_score": 0.031101,
+          "same_cp_family_gx": false,
+          "same_cp_family_isolate": false,
+          "same_exact_cp_gene": false,
+          "same_species": true,
+          "same_st": false
+        }
+      ]
+    },
+    "shap_summary": {
+      "important_note": "SHAP explains why XGBoost prioritised a candidate. SHAP does NOT establish clonal linkage, plasmid linkage, transmission, or causality.",
+      "candidates": [
+        {
+          "source_sample_id": "HTS-E241",
+          "rank": 1,
+          "ranking_score": 0.67271,
+          "strongest_positive_feature": "same_exact_cp_gene_isolate",
+          "strongest_negative_feature": "days_before_acquisition",
+          "top_shap_contributions": [
+            {
+              "feature": "same_exact_cp_gene_isolate",
+              "shap_value": 1.215213
+            },
+            {
+              "feature": "days_before_acquisition",
+              "shap_value": -1.061492
+            },
+            {
+              "feature": "same_species_any",
+              "shap_value": 0.444986
+            }
+          ]
+        },
+        {
+          "source_sample_id": "HTS-E186",
+          "rank": 2,
+          "ranking_score": 0.67271,
+          "strongest_positive_feature": "same_exact_cp_gene_isolate",
+          "strongest_negative_feature": "days_before_acquisition",
+          "top_shap_contributions": [
+            {
+              "feature": "same_exact_cp_gene_isolate",
+              "shap_value": 1.215213
+            },
+            {
+              "feature": "days_before_acquisition",
+              "shap_value": -1.061492
+            },
+            {
+              "feature": "same_species_any",
+              "shap_value": 0.444986
+            }
+          ]
+        },
+        {
+          "source_sample_id": "HTS-S446",
+          "rank": 3,
+          "ranking_score": 0.033373,
+          "strongest_positive_feature": "same_species_any",
+          "strongest_negative_feature": "same_exact_cp_gene_isolate",
+          "top_shap_contributions": [
+            {
+              "feature": "same_exact_cp_gene_isolate",
+              "shap_value": -3.267203
+            },
+            {
+              "feature": "same_cp_family_isolate",
+              "shap_value": -0.671851
+            },
+            {
+              "feature": "same_species_any",
+              "shap_value": 0.282638
+            }
+          ]
+        },
+        {
+          "source_sample_id": "HTS-S398",
+          "rank": 4,
+          "ranking_score": 0.031149,
+          "strongest_positive_feature": "same_species_any",
+          "strongest_negative_feature": "same_exact_cp_gene_isolate",
+          "top_shap_contributions": [
+            {
+              "feature": "same_exact_cp_gene_isolate",
+              "shap_value": -3.280098
+            },
+            {
+              "feature": "same_cp_family_isolate",
+              "shap_value": -0.671851
+            },
+            {
+              "feature": "same_species_any",
+              "shap_value": 0.282638
+            }
+          ]
+        },
+        {
+          "source_sample_id": "HTS-P471",
+          "rank": 5,
+          "ranking_score": 0.031101,
+          "strongest_positive_feature": "same_species_any",
+          "strongest_negative_feature": "same_exact_cp_gene_isolate",
+          "top_shap_contributions": [
+            {
+              "feature": "same_exact_cp_gene_isolate",
+              "shap_value": -3.280098
+            },
+            {
+              "feature": "same_cp_family_isolate",
+              "shap_value": -0.671851
+            },
+            {
+              "feature": "same_species_any",
+              "shap_value": 0.282638
+            }
+          ]
+        }
+      ]
+    },
+    "scientific_guardrails": [
+      "Only direct_wgs_linked_sources.clonal_link may establish direct clonal WGS relatedness.",
+      "Only direct_wgs_linked_sources.plasmid_link may establish direct plasmid WGS relatedness.",
+      "Exact CP-gene, species, ST, XGBoost rank, or SHAP values alone must never be called clonal or plasmid WGS linkage.",
+      "Direct genomic relatedness supports circulation but does not prove direct donor-to-recipient transmission."
+    ]
+  },
+  "deterministic_wgs_reference": "ENVIRONMENT_ASSOCIATED_CLONAL",
+  "council_members": [
+    {
+      "model_name": "qwen3:8b",
+      "role": "investigator",
+      "target_id": "T0124",
+      "opinion": {
+        "target_id": "T0124",
+        "mechanism": "ENVIRONMENT_ASSOCIATED_CLONAL",
+        "confidence": "high",
+        "rationale": "Direct WGS evidence shows environment source T0060 (HTS-E186) has clonal_link = true with identical species, ST, and CP gene. XGBoost prioritizes this link but does not override direct WGS classification.",
+        "key_evidence": [
+          "Environment source T0060 (HTS-E186) with clonal_link = true",
+          "Same_exact_cp_gene = true",
+          "Same_species = true"
+        ],
+        "direct_transmission_proven": false
+      }
+    },
+    {
+      "model_name": "medgemma1.5:4b",
+      "role": "biomedical_expert",
+      "target_id": "T0124",
+      "opinion": {
+        "target_id": "T0124",
+        "mechanism": "ENVIRONMENT_ASSOCIATED_PLASMID",
+        "confidence": "high",
+        "rationale": "The direct WGS evidence shows a link to an environment source (T0060) with a prior sample (HTS-E186) that shares the exact same carbapenemase gene (blaVIM-2) and the same species (Pseudomonas aeruginosa) and sequence type (ST823). This establishes a direct WGS link, but no explicit plasmid link is documented. The presence of a prior environment source with the same exact carbapenemase gene and species strongly suggests acquisition from the environment, consistent with an environment-associated plasmid.",
+        "key_evidence": [
+          "direct_wgs_linked_sources.direct_wgs_linked_sources[0].source_type == 'environment'",
+          "direct_wgs_linked_sources.direct_wgs_linked_sources[0].source_subject_id == 'T0060'",
+          "direct_wgs_linked_sources.direct_wgs_linked_sources[0].source_sample_id == 'HTS-E186'"
+        ],
+        "direct_transmission_proven": false
+      }
+    },
+    {
+      "model_name": "llama3.1:8b",
+      "role": "causal_critic",
+      "target_id": "T0124",
+      "opinion": {
+        "target_id": "T0124",
+        "mechanism": "ENVIRONMENT_ASSOCIATED_CLONAL",
+        "confidence": "moderate",
+        "rationale": "Direct WGS evidence shows a clonal link between the target and an environmental source (T0060) with the same ST and CP gene. This is the only direct WGS link present.",
+        "key_evidence": [
+          "direct_wgs_linked_sources[0].source_type = 'environment'",
+          "direct_wgs_linked_sources[0].clonal_link = true",
+          "direct_wgs_linked_sources[0].source_subject_id = 'T0060'"
+        ],
+        "direct_transmission_proven": false
+      }
+    }
+  ],
+  "consensus": {
+    "status": "MAJORITY",
+    "consensus_mechanism": "ENVIRONMENT_ASSOCIATED_CLONAL",
+    "vote_count": 2,
+    "total_members": 3,
+    "votes": {
+      "ENVIRONMENT_ASSOCIATED_CLONAL": 2,
+      "ENVIRONMENT_ASSOCIATED_PLASMID": 1
+    },
+    "member_votes": {
+      "qwen3:8b": "ENVIRONMENT_ASSOCIATED_CLONAL",
+      "medgemma1.5:4b": "ENVIRONMENT_ASSOCIATED_PLASMID",
+      "llama3.1:8b": "ENVIRONMENT_ASSOCIATED_CLONAL"
+    }
+  },
+  "validation": {
+    "status": "VALIDATED_CONSENSUS",
+    "validated_mechanism": "ENVIRONMENT_ASSOCIATED_CLONAL",
+    "reference_mechanism": "ENVIRONMENT_ASSOCIATED_CLONAL",
+    "consensus_matches_reference": true,
+    "fatal_issues": [],
+    "warnings": [],
+    "member_checks": [
+      {
+        "model": "qwen3:8b",
+        "role": "investigator",
+        "mechanism": "ENVIRONMENT_ASSOCIATED_CLONAL",
+        "matches_wgs_reference": true,
+        "warnings": []
+      },
+      {
+        "model": "medgemma1.5:4b",
+        "role": "biomedical_expert",
+        "mechanism": "ENVIRONMENT_ASSOCIATED_PLASMID",
+        "matches_wgs_reference": false,
+        "warnings": []
+      },
+      {
+        "model": "llama3.1:8b",
+        "role": "causal_critic",
+        "mechanism": "ENVIRONMENT_ASSOCIATED_CLONAL",
+        "matches_wgs_reference": true,
+        "warnings": []
+      }
+    ]
+  }
+}

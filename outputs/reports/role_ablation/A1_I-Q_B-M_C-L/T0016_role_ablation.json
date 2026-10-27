@@ -1,0 +1,154 @@
+{
+  "target_id": "T0016",
+  "experiment": "role_assignment_ablation",
+  "council_version": "2.0-frozen",
+  "assignment_id": "A1",
+  "assignment_code": "QML",
+  "is_original_assignment": true,
+  "models_by_role": {
+    "investigator": "qwen3:8b",
+    "biomedical_expert": "medgemma1.5:4b",
+    "causal_critic": "llama3.1:8b"
+  },
+  "generation_config": {
+    "temperature": 0,
+    "seed": 42,
+    "tool_calls": false
+  },
+  "evidence_packet_sha256": "551cb7f89e7a9496bc6b584ba6beb08dc58121484b42d06b2cc43fbd00f82075",
+  "evidence_packet": {
+    "target_id": "T0016",
+    "acquisition": {
+      "SubjectID": "T0016",
+      "acquisition_date": "2021-07-11T00:00:00",
+      "lab_cp_gene": "NDM",
+      "genomics_species_st": null,
+      "genomics_cp_gene": null,
+      "has_culture_wgs": false,
+      "hospital": "T",
+      "wards": "7C",
+      "positive_sample_id": "HTS-N46",
+      "sample_schedule": "W12"
+    },
+    "decisive_wgs_summary": {
+      "target_wgs_available": false,
+      "total_direct_wgs_links": 0,
+      "prior_patient_clonal_links": 0,
+      "prior_patient_plasmid_links": 0,
+      "prior_environment_clonal_links": 0,
+      "prior_environment_plasmid_links": 0,
+      "wgs_status": "UNRESOLVED_NO_TARGET_WGS"
+    },
+    "direct_wgs_linked_sources": [],
+    "xgboost_candidate_prioritisation": {
+      "important_note": "ranking_score is only a relative candidate-prioritisation score. It is NOT a calibrated probability of transmission.",
+      "top_5_unique_candidates": []
+    },
+    "shap_summary": {
+      "important_note": "SHAP explains why XGBoost prioritised a candidate. SHAP does NOT establish clonal linkage, plasmid linkage, transmission, or causality.",
+      "candidates": []
+    },
+    "scientific_guardrails": [
+      "Only direct_wgs_linked_sources.clonal_link may establish direct clonal WGS relatedness.",
+      "Only direct_wgs_linked_sources.plasmid_link may establish direct plasmid WGS relatedness.",
+      "Exact CP-gene, species, ST, XGBoost rank, or SHAP values alone must never be called clonal or plasmid WGS linkage.",
+      "Direct genomic relatedness supports circulation but does not prove direct donor-to-recipient transmission."
+    ]
+  },
+  "deterministic_wgs_reference": "UNRESOLVED_NO_TARGET_WGS",
+  "council_members": [
+    {
+      "model_name": "qwen3:8b",
+      "role": "investigator",
+      "opinion": {
+        "target_id": "T0016",
+        "mechanism": "UNRESOLVED_NO_TARGET_WGS",
+        "confidence": "low",
+        "rationale": "Target lacks WGS data and no direct clonal/plasmid links exist in linked sources. Direct transmission cannot be proven without genomic evidence.",
+        "key_evidence": [
+          "target_wgs_available = false",
+          "total_direct_wgs_links = 0",
+          "direct_wgs_linked_sources = []"
+        ],
+        "direct_transmission_proven": false
+      }
+    },
+    {
+      "model_name": "medgemma1.5:4b",
+      "role": "biomedical_expert",
+      "opinion": {
+        "target_id": "T0016",
+        "mechanism": "UNRESOLVED_NO_TARGET_WGS",
+        "confidence": "low",
+        "rationale": "The decisive_wgs_summary indicates target_wgs_available is false, meaning no direct WGS evidence is available for this target.",
+        "key_evidence": [
+          "decisive_wgs_summary.target_wgs_available = false",
+          "decisive_wgs_summary.total_direct_wgs_links = 0",
+          "decisive_wgs_summary.wgs_status = 'UNRESOLVED_NO_TARGET_WGS'"
+        ],
+        "direct_transmission_proven": false
+      }
+    },
+    {
+      "model_name": "llama3.1:8b",
+      "role": "causal_critic",
+      "opinion": {
+        "target_id": "T0016",
+        "mechanism": "UNRESOLVED_NO_TARGET_WGS",
+        "confidence": "low",
+        "rationale": "Target T0016 has no available WGS data, and no direct WGS links are present. Therefore, no mechanism can be confidently assigned.",
+        "key_evidence": [
+          "target_wgs_available = false",
+          "total_direct_wgs_links = 0",
+          "wgs_status = UNRESOLVED_NO_TARGET_WGS"
+        ],
+        "direct_transmission_proven": false
+      }
+    }
+  ],
+  "consensus": {
+    "status": "UNANIMOUS",
+    "consensus_mechanism": "UNRESOLVED_NO_TARGET_WGS",
+    "vote_count": 3,
+    "total_members": 3,
+    "votes": {
+      "UNRESOLVED_NO_TARGET_WGS": 3
+    },
+    "member_votes": {
+      "qwen3:8b": "UNRESOLVED_NO_TARGET_WGS",
+      "medgemma1.5:4b": "UNRESOLVED_NO_TARGET_WGS",
+      "llama3.1:8b": "UNRESOLVED_NO_TARGET_WGS"
+    }
+  },
+  "validation": {
+    "status": "VALIDATED_CONSENSUS",
+    "validated_mechanism": "UNRESOLVED_NO_TARGET_WGS",
+    "reference_mechanism": "UNRESOLVED_NO_TARGET_WGS",
+    "consensus_matches_reference": true,
+    "fatal_issues": [],
+    "warnings": [],
+    "member_checks": [
+      {
+        "model": "qwen3:8b",
+        "role": "investigator",
+        "mechanism": "UNRESOLVED_NO_TARGET_WGS",
+        "matches_wgs_reference": true,
+        "warnings": []
+      },
+      {
+        "model": "medgemma1.5:4b",
+        "role": "biomedical_expert",
+        "mechanism": "UNRESOLVED_NO_TARGET_WGS",
+        "matches_wgs_reference": true,
+        "warnings": []
+      },
+      {
+        "model": "llama3.1:8b",
+        "role": "causal_critic",
+        "mechanism": "UNRESOLVED_NO_TARGET_WGS",
+        "matches_wgs_reference": true,
+        "warnings": []
+      }
+    ]
+  }
+}

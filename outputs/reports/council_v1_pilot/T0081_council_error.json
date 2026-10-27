@@ -1,0 +1,6 @@
+{
+  "target_id": "T0081",
+  "status": "ERROR",
+  "error_type": "RuntimeError",
+  "error": "medgemma1.5:4b failed to produce a valid council opinion for T0081: 1 validation error for CouncilOpinion\n  Invalid JSON: EOF while parsing a value at line 101 column 0 [type=json_invalid, input_value='{\\n  \"target_id\": \"T0081... the target sample.\",\\n', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.13/v/json_invalid"
+}

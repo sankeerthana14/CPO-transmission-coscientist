@@ -1,0 +1,13 @@
+{
+  "target_id": "T0058",
+  "assignment_id": "A3",
+  "assignment_code": "MQL",
+  "models_by_role": {
+    "investigator": "medgemma1.5:4b",
+    "biomedical_expert": "qwen3:8b",
+    "causal_critic": "llama3.1:8b"
+  },
+  "status": "ERROR",
+  "error_type": "RuntimeError",
+  "error": "medgemma1.5:4b failed to produce a valid CouncilVote for T0058: 1 validation error for CouncilVote\n  Invalid JSON: EOF while parsing a string at line 8 column 64 [type=json_invalid, input_value='{\\n  \"target_id\": \"T0058...mid_cp_genes = \\'blaOXA', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.13/v/json_invalid"
+}

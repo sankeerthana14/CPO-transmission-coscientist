@@ -1,0 +1,4 @@
+model,role,available_votes,matches_reference,agreement_rate
+llama3.1:8b,causal_critic,35,20,0.5714285714285714
+medgemma1.5:4b,biomedical_expert,35,30,0.8571428571428571
+qwen3:8b,investigator,35,35,1.0

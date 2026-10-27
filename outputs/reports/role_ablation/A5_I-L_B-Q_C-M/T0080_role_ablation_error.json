@@ -1,0 +1,13 @@
+{
+  "target_id": "T0080",
+  "assignment_id": "A5",
+  "assignment_code": "LQM",
+  "models_by_role": {
+    "investigator": "llama3.1:8b",
+    "biomedical_expert": "qwen3:8b",
+    "causal_critic": "medgemma1.5:4b"
+  },
+  "status": "ERROR",
+  "error_type": "RuntimeError",
+  "error": "medgemma1.5:4b failed to produce a valid CouncilVote for T0080: Model changed target_id from T0080 to HTS-P315."
+}
