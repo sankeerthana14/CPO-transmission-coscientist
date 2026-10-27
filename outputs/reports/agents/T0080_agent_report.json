@@ -1,0 +1,74 @@
+{
+  "target_id": "T0080",
+  "model": "qwen3:8b",
+  "initial_investigation": {
+    "target_id": "HTS00405",
+    "mechanism": "ENVIRONMENT_ASSOCIATED_PLASMID",
+    "confidence": "moderate",
+    "headline": "The acquisition is consistent with plasmid-mediated circulation of resistance genes in the hospital environment.",
+    "key_evidence": [
+      "Target isolate HTS00405 is *K. pneumoniae* ST15 carrying blaOXA-181.",
+      "Multiple prior isolates (HTS00105, HTS00356, HTS00405) carry blaOXA-181 or NDM-5.",
+      "Plasmid linkage confirmed via WGS for all prior isolates.",
+      "No clonal linkage between target isolate and prior isolates.",
+      "Temporal range of prior isolates spans 253 days, with some within 48 days of the target isolate.",
+      "No confirmed hospital contact beyond subject ID prefix assumption."
+    ],
+    "model_ranking_interpretation": "XGBoost prioritises candidates with shared resistance genes and plasmid linkage, but does not confirm direct transmission.",
+    "alternative_explanations": [
+      "Persistent environmental reservoir of plasmid-mediated resistance.",
+      "Intermediate hosts or unsampled transmission events.",
+      "Cross-species plasmid transfer between *K. pneumoniae* and *E. coli*."
+    ],
+    "limitations": [
+      "Hospital matching is based on subject ID prefix, not confirmed spatial contact.",
+      "No clonal linkage, so transmission cannot be confirmed.",
+      "Plasmid dissemination may involve multiple, unsampled sources."
+    ],
+    "direct_transmission_proven": false,
+    "conclusion": "The acquisition is consistent with plasmid-mediated circulation of resistance genes in the hospital environment, but direct transmission cannot be confirmed. The presence of shared resistance genes and plasmid linkage supports environmental or intermediate host transmission, though further investigation is needed to resolve the exact mechanism."
+  },
+  "critic_review": {
+    "target_id": "HTS00405",
+    "verdict": "SUPPORTED_WITH_REVISIONS",
+    "chronology_issue": false,
+    "wgs_interpretation_issue": false,
+    "model_overreach_issue": false,
+    "causal_overclaim_issue": true,
+    "issues": [
+      "The conclusion implies plasmid-mediated direct transmission without confirming it.",
+      "The 48-day temporal window is presented as evidence of direct transmission, but it is not sufficient to establish causality."
+    ],
+    "required_revisions": [
+      "Clarify that plasmid linkage does not confirm direct transmission, even though it is inferred in the conclusion.",
+      "Explicitly state that the 48-day temporal window is correlational, not causal."
+    ],
+    "recommended_mechanism": "ENVIRONMENT_ASSOCIATED_PLASMID",
+    "revised_conclusion": "The acquisition is consistent with plasmid-mediated circulation of resistance genes in the hospital environment, but direct transmission cannot be confirmed. The presence of shared resistance genes and plasmid linkage supports environmental or intermediate host transmission, though further investigation is needed to resolve the exact mechanism."
+  },
+  "final_investigation": {
+    "target_id": "T0080",
+    "mechanism": "PATIENT_ASSOCIATED_PLASMID",
+    "confidence": "moderate",
+    "headline": "The acquisition is consistent with patient-associated plasmid circulation, but not direct clonal transmission.",
+    "key_evidence": [
+      "Multiple prior patient isolates (T0054, T0068, T0057, T0076) show plasmid compatibility with the target isolate.",
+      "All top-ranked candidates share the same CP family and exact CP gene.",
+      "No clonal WGS linkage was found between the target isolate and any prior patient isolate.",
+      "XGBoost ranks these candidates highly based on phenotypic and epidemiological similarity."
+    ],
+    "model_ranking_interpretation": "The XGBoost model prioritises candidates with strong phenotypic and epidemiological ties, such as same CP family and species, but does not provide calibrated probability of transmission.",
+    "alternative_explanations": [
+      "Persistent plasmid circulation in the hospital environment.",
+      "Intermediate hosts or environmental reservoirs not sampled.",
+      "Horizontal gene transfer between unrelated isolates."
+    ],
+    "limitations": [
+      "No clonal WGS link was found, so direct transmission cannot be confirmed.",
+      "XGBoost ranking is not a probability of transmission.",
+      "Environmental sources were not evaluated in this report."
+    ],
+    "direct_transmission_proven": false,
+    "conclusion": "The acquisition is consistent with plasmid-mediated resistance transmission from prior patient isolates, but no direct clonal link was found. Further investigation into plasmid typing and environmental sampling is recommended."
+  }
+}

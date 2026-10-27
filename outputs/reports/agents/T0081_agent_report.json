@@ -1,0 +1,72 @@
+{
+  "target_id": "T0081",
+  "model": "qwen3:8b",
+  "initial_investigation": {
+    "target_id": "T0081",
+    "mechanism": "PATIENT_ASSOCIATED_CLONAL",
+    "confidence": "moderate",
+    "headline": "The acquisition of CPO in patient T0081 is consistent with clonal circulation associated with prior patient isolates.",
+    "key_evidence": [
+      "Direct clonal WGS linkage to patient T0068 (sample HTS-P340) with same species, ST, and exact CP-gene (blaOXA-181).",
+      "Direct clonal WGS linkage to patient T0054 (sample HTS-P315) with same species, ST, and exact CP-gene (blaOXA-181).",
+      "Both prior patient isolates had GeneXpert result OXA48, matching the target's CP-gene.",
+      "Temporal relation of prior isolates (35 and 63 days before acquisition)."
+    ],
+    "model_ranking_interpretation": "The XGBoost ranking prioritises plausible candidate sources, but WGS evidence takes precedence in determining the mechanism of CPO acquisition.",
+    "alternative_explanations": [
+      "Persistent circulation of the same clonal lineage in the hospital environment.",
+      "Intermediate hosts or unsampled transmission events.",
+      "Long time interval between prior isolates and acquisition weakens direct transmission claims."
+    ],
+    "limitations": [
+      "Hospital matching is based on subject-ID-prefix assumption, not confirmed spatial overlap.",
+      "No direct plasmid linkage evidence is present.",
+      "XGBoost ranking is not a calibrated probability of transmission."
+    ],
+    "direct_transmission_proven": false,
+    "conclusion": "The acquisition of CPO in patient T0081 is consistent with clonal circulation associated with prior patient isolates, but direct transmission cannot be proven. The evidence supports patient-associated clonal circulation, though alternative explanations such as persistent reservoirs or intermediate hosts remain plausible."
+  },
+  "critic_review": {
+    "target_id": "T0081",
+    "verdict": "SUPPORTED_WITH_REVISIONS",
+    "chronology_issue": false,
+    "wgs_interpretation_issue": false,
+    "model_overreach_issue": false,
+    "causal_overclaim_issue": false,
+    "issues": [
+      "The report correctly identifies direct clonal WGS linkage to prior isolates but could clarify that clonal linkage supports circulation rather than direct transmission.",
+      "The report acknowledges the temporal distance as a limitation, but could explicitly state that the time gap weakens direct transmission claims."
+    ],
+    "required_revisions": [
+      "Revise confidence level to reflect the temporal distance and unconfirmed hospital overlap.",
+      "Clarify that clonal linkage supports circulation rather than direct transmission to avoid causal overclaiming."
+    ],
+    "recommended_mechanism": "PATIENT_ASSOCIATED_CLONAL",
+    "revised_conclusion": "The acquisition of CPO in patient T0081 is consistent with patient-associated clonal circulation, as supported by direct WGS linkage to prior isolates. While direct transmission cannot be definitively proven, alternative explanations such as persistent reservoirs or intermediate hosts remain plausible. The evidence supports clonal circulation, but the conclusion should emphasize the distinction between clonal linkage and direct transmission."
+  },
+  "final_investigation": {
+    "target_id": "T0081",
+    "mechanism": "PATIENT_ASSOCIATED_CLONAL",
+    "confidence": "moderate",
+    "headline": "The acquisition is consistent with patient-associated clonal circulation of a carbapenemase-producing organism.",
+    "key_evidence": [
+      "Direct clonal WGS link confirmed with T0068 (HTS-P340) and T0054 (HTS-P315).",
+      "Same CP family, exact gene, species, and sequence type observed.",
+      "XGBoost ranks T0068 (HTS-P348) and T0054 (HTS-P315) as high probability candidates.",
+      "T0076 (HTS-P387) is the closest in time but lacks WGS evidence."
+    ],
+    "model_ranking_interpretation": "The XGBoost model prioritizes candidates with strong genetic compatibility, such as same CP family, exact gene, and sequence type, but does not provide calibrated probability of transmission.",
+    "alternative_explanations": [
+      "Persistent reservoir or long-term circulation of the organism in the hospital environment.",
+      "Intermediate hosts or unsampled transmission events.",
+      "Temporal proximity without direct transmission."
+    ],
+    "limitations": [
+      "No direct WGS link for T0068 (HTS-P348) and T0054 (HTS-P315), despite high XGBoost ranking.",
+      "No spatial or environmental matching confirmed for known CPO-positive patients.",
+      "XGBoost ranking is not a probability of transmission but a prioritization of plausible sources."
+    ],
+    "direct_transmission_proven": false,
+    "conclusion": "The acquisition is consistent with patient-associated clonal circulation, supported by direct WGS clonal links with earlier patient isolates. However, direct transmission cannot be proven without further evidence. The XGBoost model highlights genetic compatibility as a key factor, but WGS evidence remains the highest priority for confirming transmission."
+  }
+}

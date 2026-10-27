@@ -1,0 +1,63 @@
+{
+  "target_id": "T0016",
+  "model": "qwen3:8b",
+  "initial_investigation": {
+    "target_id": "T0016",
+    "mechanism": "UNRESOLVED_NO_TARGET_WGS",
+    "confidence": "unresolved",
+    "headline": "The mechanism of CPO acquisition for T0016 cannot be determined due to lack of target WGS isolate.",
+    "key_evidence": [
+      "No usable WGS isolate for the target acquisition patient (T0016).",
+      "No direct WGS clonal or plasmid linkage to prior candidates."
+    ],
+    "model_ranking_interpretation": "XGBoost ranking is not applicable due to lack of target WGS isolate.",
+    "alternative_explanations": [
+      "Persistent environmental reservoir of CPO.",
+      "Intermediate host or unsampled transmission pathway.",
+      "Undetected prior colonization in the patient."
+    ],
+    "limitations": [
+      "No WGS data for the target isolate.",
+      "No prior WGS-linked candidates for comparison.",
+      "No chronological or environmental data to support transmission."
+    ],
+    "direct_transmission_proven": false,
+    "conclusion": "The mechanism of CPO acquisition for T0016 remains unresolved due to the absence of a usable WGS isolate. Direct transmission cannot be proven without further genomic evidence."
+  },
+  "critic_review": {
+    "target_id": "T0016",
+    "verdict": "SUPPORTED",
+    "chronology_issue": false,
+    "wgs_interpretation_issue": false,
+    "model_overreach_issue": false,
+    "causal_overclaim_issue": false,
+    "issues": [],
+    "required_revisions": [],
+    "recommended_mechanism": "UNRESOLVED_NO_TARGET_WGS",
+    "revised_conclusion": "The mechanism of CPO acquisition for T0016 remains unresolved due to the absence of a usable WGS isolate. Direct transmission cannot be proven without further genomic evidence."
+  },
+  "final_investigation": {
+    "target_id": "T0016",
+    "mechanism": "UNRESOLVED_NO_TARGET_WGS",
+    "confidence": "unresolved",
+    "headline": "The mechanism of CPO acquisition for T0016 remains unresolved due to the absence of a usable WGS isolate.",
+    "key_evidence": [
+      "No usable WGS isolate for T0016 (has_culture_wgs: false).",
+      "No direct WGS clonal or plasmid linkage to any prior candidates.",
+      "XGBoost ranking is not applicable due to missing target WGS data."
+    ],
+    "model_ranking_interpretation": "XGBoost ranking is not applicable without target WGS isolate; it is only used for prioritising plausible candidate sources.",
+    "alternative_explanations": [
+      "Environmental reservoir persistence in hospital T, ward 7C.",
+      "Undetected prior colonization in the patient.",
+      "Intermediate transmission pathway involving unsampled sources."
+    ],
+    "limitations": [
+      "No target WGS isolate prevents genomic source attribution.",
+      "No chronological data to correlate acquisition dates.",
+      "Known_CPO_pos patient sources cannot be localized with certainty."
+    ],
+    "direct_transmission_proven": false,
+    "conclusion": "The mechanism of CPO acquisition for T0016 remains unresolved due to the absence of a usable WGS isolate. Direct transmission cannot be proven without further genomic evidence."
+  }
+}

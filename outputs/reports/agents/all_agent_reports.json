@@ -1,0 +1,582 @@
+[
+  {
+    "target_id": "T0016",
+    "model": "qwen3:8b",
+    "initial_investigation": {
+      "target_id": "T0016",
+      "mechanism": "UNRESOLVED_NO_TARGET_WGS",
+      "confidence": "unresolved",
+      "headline": "The mechanism of CPO acquisition for T0016 cannot be determined due to lack of target WGS isolate.",
+      "key_evidence": [
+        "No usable WGS isolate for the target acquisition patient (T0016).",
+        "No direct WGS clonal or plasmid linkage to prior candidates."
+      ],
+      "model_ranking_interpretation": "XGBoost ranking is not applicable due to lack of target WGS isolate.",
+      "alternative_explanations": [
+        "Persistent environmental reservoir of CPO.",
+        "Intermediate host or unsampled transmission pathway.",
+        "Undetected prior colonization in the patient."
+      ],
+      "limitations": [
+        "No WGS data for the target isolate.",
+        "No prior WGS-linked candidates for comparison.",
+        "No chronological or environmental data to support transmission."
+      ],
+      "direct_transmission_proven": false,
+      "conclusion": "The mechanism of CPO acquisition for T0016 remains unresolved due to the absence of a usable WGS isolate. Direct transmission cannot be proven without further genomic evidence."
+    },
+    "critic_review": {
+      "target_id": "T0016",
+      "verdict": "SUPPORTED",
+      "chronology_issue": false,
+      "wgs_interpretation_issue": false,
+      "model_overreach_issue": false,
+      "causal_overclaim_issue": false,
+      "issues": [],
+      "required_revisions": [],
+      "recommended_mechanism": "UNRESOLVED_NO_TARGET_WGS",
+      "revised_conclusion": "The mechanism of CPO acquisition for T0016 remains unresolved due to the absence of a usable WGS isolate. Direct transmission cannot be proven without further genomic evidence."
+    },
+    "final_investigation": {
+      "target_id": "T0016",
+      "mechanism": "UNRESOLVED_NO_TARGET_WGS",
+      "confidence": "unresolved",
+      "headline": "The mechanism of CPO acquisition for T0016 remains unresolved due to the absence of a usable WGS isolate.",
+      "key_evidence": [
+        "No usable WGS isolate for T0016 (has_culture_wgs: false).",
+        "No direct WGS clonal or plasmid linkage to any prior candidates.",
+        "XGBoost ranking is not applicable due to missing target WGS data."
+      ],
+      "model_ranking_interpretation": "XGBoost ranking is not applicable without target WGS isolate; it is only used for prioritising plausible candidate sources.",
+      "alternative_explanations": [
+        "Environmental reservoir persistence in hospital T, ward 7C.",
+        "Undetected prior colonization in the patient.",
+        "Intermediate transmission pathway involving unsampled sources."
+      ],
+      "limitations": [
+        "No target WGS isolate prevents genomic source attribution.",
+        "No chronological data to correlate acquisition dates.",
+        "Known_CPO_pos patient sources cannot be localized with certainty."
+      ],
+      "direct_transmission_proven": false,
+      "conclusion": "The mechanism of CPO acquisition for T0016 remains unresolved due to the absence of a usable WGS isolate. Direct transmission cannot be proven without further genomic evidence."
+    }
+  },
+  {
+    "target_id": "T0036",
+    "model": "qwen3:8b",
+    "initial_investigation": {
+      "target_id": "T0036",
+      "mechanism": "ENVIRONMENT_ASSOCIATED_CLONAL",
+      "confidence": "moderate",
+      "headline": "The acquisition is consistent with environmental-associated clonal circulation, though no direct WGS link was found.",
+      "key_evidence": [
+        "Top-ranked environmental samples (HTS-E120/HTS-E121) share same CP family, exact gene, species, and ST as the target.",
+        "Environmental samples were collected 9 days before acquisition and from the same ward (source_subject_id = T0036).",
+        "No direct WGS clonal or plasmid linkage was found between the target and any prior patient or environmental isolates."
+      ],
+      "model_ranking_interpretation": "The XGBoost model prioritizes environmental samples due to their temporal proximity, genetic similarity, and shared ward location, but these rankings do not confirm direct transmission.",
+      "alternative_explanations": [
+        "Persistent environmental reservoirs (e.g., surfaces, equipment) may have contributed to the acquisition.",
+        "Intermediate hosts or unsampled transmission pathways could explain the lack of direct WGS linkage.",
+        "The target may have acquired the pathogen through a different route or from an unsampled source."
+      ],
+      "limitations": [
+        "No direct WGS clonal or plasmid linkage was found between the target and any prior isolates.",
+        "XGBoost rankings are probabilistic and should be interpreted alongside contextual factors.",
+        "Environmental samples were not tested for specific resistance genes (e.g., NDM-1) to confirm their role."
+      ],
+      "direct_transmission_proven": false,
+      "conclusion": "The acquisition is most consistent with environmental-associated clonal circulation, though no direct genetic transmission was confirmed. Further investigation into environmental contamination and shared facilities is recommended."
+    },
+    "critic_review": {
+      "target_id": "T0036",
+      "verdict": "SUPPORTED_WITH_REVISIONS",
+      "chronology_issue": false,
+      "wgs_interpretation_issue": true,
+      "model_overreach_issue": false,
+      "causal_overclaim_issue": true,
+      "issues": [
+        "No direct clonal or plasmid linkage established between source and target isolates.",
+        "Genomic similarity does not confirm direct transmission; only relatedness is observed.",
+        "Causal overclaim: the report may imply direct donor-to-recipient transmission without sufficient evidence."
+      ],
+      "required_revisions": [
+        "Avoid implying direct transmission without clonal or plasmid linkage evidence.",
+        "Clarify that genomic similarity does not equate to direct transmission.",
+        "Recommend further analysis to establish directional phylogenetic relationships."
+      ],
+      "recommended_mechanism": "NO_DIRECT_WGS_LINK",
+      "revised_conclusion": "The environment sources are temporally and spatially associated with the target isolate, and they share genomic features (species, ST, and CP gene). However, there is no direct clonal or plasmid linkage, and the WGS data does not confirm a directional transmission path. Further analysis is required to resolve the transmission mechanism."
+    },
+    "final_investigation": {
+      "target_id": "T0036",
+      "mechanism": "NO_DIRECT_WGS_LINK",
+      "confidence": "moderate",
+      "headline": "The acquisition is temporally and spatially associated with environmental isolates sharing genomic features, but no direct clonal or plasmid linkage was found.",
+      "key_evidence": [
+        "Top-ranked environmental samples (HTS-E120/HTS-E121) share same CP family, exact gene, species, and ST as the target.",
+        "Environmental samples were collected 9 days before acquisition and from the same ward (source_subject_id = T0036).",
+        "No direct WGS clonal or plasmid linkage was found between the target and any prior patient or environmental isolates."
+      ],
+      "model_ranking_interpretation": "The XGBoost model prioritizes environmental samples due to their temporal proximity, genetic similarity, and shared ward location, but these rankings do not confirm direct transmission.",
+      "alternative_explanations": [
+        "Persistent environmental reservoirs (e.g., surfaces, equipment) may have contributed to the acquisition.",
+        "Intermediate hosts or unsampled transmission pathways could explain the lack of direct WGS linkage.",
+        "The target may have acquired the pathogen through a different route or from an unsampled source."
+      ],
+      "limitations": [
+        "No direct WGS clonal or plasmid linkage was found between the target and any prior isolates.",
+        "XGBoost rankings are probabilistic and should be interpreted alongside contextual factors.",
+        "Environmental samples were not tested for specific resistance genes (e.g., NDM-1) to confirm their role."
+      ],
+      "direct_transmission_proven": false,
+      "conclusion": "The environment sources are temporally and spatially associated with the target isolate, and they share genomic features (species, ST, and CP gene). However, there is no direct clonal or plasmid linkage, and the WGS data does not confirm a directional transmission path. Further analysis is required to resolve the transmission mechanism."
+    }
+  },
+  {
+    "target_id": "T0052",
+    "model": "qwen3:8b",
+    "initial_investigation": {
+      "target_id": "T0052",
+      "mechanism": "NO_DIRECT_WGS_LINK",
+      "confidence": "moderate",
+      "headline": "The acquisition case for T0052 shows no direct clonal or plasmid linkage to prior sources, but the XGBoost model highlights T0042 as the most probable source based on shared characteristics.",
+      "key_evidence": [
+        "T0042 (HTS-P161) matches same CP family, exact CP gene, species, and ST with T0052.",
+        "T0013 (HTS-E32) and T0016 (HTS-E86) show high similarity in CP family, exact CP gene, species, and ST.",
+        "T0040 (HTS-P160/P159/P158) and T0014 (HTS-P39/P38/P29) share CP family and exact CP gene but differ in species/ST.",
+        "No direct WGS clonal or plasmid linkage exists between T0052 and any prior source."
+      ],
+      "model_ranking_interpretation": "The XGBoost model prioritizes T0042 as the most likely source due to its high predicted probability and comprehensive matches in CP family, gene, species, and ST. However, this does not equate to a probability of transmission but rather indicates potential indirect evidence of relatedness.",
+      "alternative_explanations": [
+        "Persistent environmental reservoirs could explain the presence of similar strains in multiple sources.",
+        "Intermediate hosts or unsampled transmission pathways may account for the observed genetic similarities.",
+        "The observed matches could be coincidental rather than indicative of direct transmission."
+      ],
+      "limitations": [
+        "No direct WGS clonal or plasmid linkage exists, so conclusions are based on indirect evidence.",
+        "The model rankings do not represent a probability of transmission but rather a prioritization of potential sources.",
+        "The absence of plasmid linkage data limits the ability to distinguish between clonal and plasmid-based transmission."
+      ],
+      "direct_transmission_proven": false,
+      "conclusion": "While no direct WGS clonal or plasmid linkage is present, the XGBoost model highlights T0042 as the most probable source based on shared characteristics. However, due to the absence of direct genetic evidence, the case remains unresolved, and further investigation is needed to confirm transmission pathways."
+    },
+    "critic_review": {
+      "target_id": "T0052",
+      "verdict": "INSUFFICIENT",
+      "chronology_issue": false,
+      "wgs_interpretation_issue": true,
+      "model_overreach_issue": true,
+      "causal_overclaim_issue": true,
+      "issues": [
+        "No direct WGS link between T0042 and T0052",
+        "XGBoost ranking score misinterpreted as transmission probability",
+        "Causal overclaim without WGS evidence",
+        "Hospital match is unconfirmed",
+        "Shared resistance genes do not confirm plasmid transfer"
+      ],
+      "required_revisions": [
+        "Re-evaluate WGS data for clonal or plasmid links",
+        "Avoid interpreting XGBoost scores as probabilities",
+        "Document temporal and genetic associations as potential risk factors, not definitive evidence",
+        "Confirm hospital match with explicit ward or facility data"
+      ],
+      "recommended_mechanism": "NO_DIRECT_WGS_LINK",
+      "revised_conclusion": "The Investigator cannot claim transmission from T0042 to T0052. The case remains unconfirmed without direct WGS evidence."
+    },
+    "final_investigation": {
+      "target_id": "T0052",
+      "mechanism": "NO_DIRECT_WGS_LINK",
+      "confidence": "moderate",
+      "headline": "The acquisition is consistent with clonal circulation but lacks direct WGS evidence to confirm transmission.",
+      "key_evidence": [
+        "Top-ranked patient T0042 (HTS-P161) shares CP family, exact CP gene, species, and ST with the target.",
+        "Environment T0013 (HTS-E32) and T0016 (HTS-E86) also share CP family, exact CP gene, species, and ST with the target.",
+        "No direct clonal or plasmid WGS links were found between the target and any candidate."
+      ],
+      "model_ranking_interpretation": "The XGBoost model prioritizes candidates with shared genetic and epidemiological features, but these do not equate to statistical probability of transmission.",
+      "alternative_explanations": [
+        "Persistent environmental reservoirs or shared spaces may have contributed to the spread.",
+        "Intermediate hosts or asymptomatic carriers may have facilitated transmission.",
+        "Unsampled transmission pathways could explain the observed genetic similarities."
+      ],
+      "limitations": [
+        "No direct WGS evidence confirms transmission.",
+        "The model's ranking reflects feature matches, not statistical likelihood.",
+        "Hospital-level transmission cannot be confirmed due to lack of shared subject identity."
+      ],
+      "direct_transmission_proven": false,
+      "conclusion": "The acquisition is consistent with clonal circulation, but no direct transmission pathway has been confirmed. Further investigation is required to resolve the transmission hypothesis."
+    }
+  },
+  {
+    "target_id": "T0058",
+    "model": "qwen3:8b",
+    "initial_investigation": {
+      "target_id": "T0058",
+      "mechanism": "PATIENT_ASSOCIATED_PLASMID",
+      "confidence": "moderate",
+      "headline": "The acquisition of CPO in T0058 is consistent with plasmid-mediated circulation from prior patients, but no direct clonal transmission is confirmed.",
+      "key_evidence": [
+        "Plasmid linkage with blaOXA-181 detected in four prior patients (T0057, T0054, T0044, T0034).",
+        "All prior patients had the same CP gene (blaOXA-181) and same CP family (OXA48).",
+        "No clonal linkage (same ST or species) was observed between T0058 and any prior patient.",
+        "All prior patients were from the same hospital (T).",
+        "WGS evidence supports plasmid sharing but not clonal transmission."
+      ],
+      "model_ranking_interpretation": "XGBoost ranking would prioritize these patients as plausible sources due to shared resistance genes, but the model score is not a probability of transmission.",
+      "alternative_explanations": [
+        "Persistent environmental reservoir of the blaOXA-181 plasmid.",
+        "Intermediate hosts or unsampled transmission routes.",
+        "Horizontal gene transfer across species or STs."
+      ],
+      "limitations": [
+        "No ward-level or subject prefix confirmation of hospital contact.",
+        "No XGBoost ranking data provided for prioritization interpretation.",
+        "WGS evidence does not confirm direct donor-to-recipient transfer."
+      ],
+      "direct_transmission_proven": false,
+      "conclusion": "The CPO in T0058 shares a plasmid (blaOXA-181) with prior patients, but no direct clonal transmission is confirmed. The same hospital context suggests potential nosocomial spread, but further investigation is needed to confirm transmission pathways."
+    },
+    "critic_review": {
+      "target_id": "T0058",
+      "verdict": "INSUFFICIENT",
+      "chronology_issue": false,
+      "wgs_interpretation_issue": true,
+      "model_overreach_issue": false,
+      "causal_overclaim_issue": true,
+      "issues": [
+        "Plasmid links do not confirm direct clonal transmission",
+        "Temporal distance for T0034 (196 days) suggests persistence rather than direct transmission",
+        "Hospital match status is only based on subject ID prefix, not confirmed spatial or hospital overlap",
+        "No clonal links (same ST or species-specific markers) are confirmed"
+      ],
+      "required_revisions": [
+        "Avoid conflating plasmid circulation with direct clonal transmission",
+        "Exclude T0034 as a direct donor due to temporal and genetic divergence",
+        "Clarify that hospital match status is only based on subject ID prefix and not confirmed spatial/hospital overlap",
+        "Re-evaluate the role of environmental reservoirs for plasmid persistence"
+      ],
+      "recommended_mechanism": "ENVIRONMENT_ASSOCIATED_PLASMID",
+      "revised_conclusion": "The evidence supports plasmid-mediated gene transfer but not direct clonal transmission. The Investigator must revise claims about direct donor-to-recipient transmission and consider environmental reservoirs for the persistence of blaOXA-181."
+    },
+    "final_investigation": {
+      "target_id": "T0058",
+      "mechanism": "PATIENT_ASSOCIATED_PLASMID",
+      "confidence": "moderate",
+      "headline": "The most defensible hypothesis is that T0058's infection was associated with plasmid-mediated resistance transfer from patient T0054 or T0057.",
+      "key_evidence": [
+        "Plasmid linkage (label_plasmid_link = 1) between T0058 and T0054 (HTS-P315) and T0057 (HTS-P331).",
+        "Same CP family and gene match (same_cp_family_gx = 1, same_exact_cp_gene_isolate = 1) for T0054 and T0057.",
+        "T0057 (HTS-P331) is very close in time (3 days before T0058's infection)."
+      ],
+      "model_ranking_interpretation": "The XGBoost ranking prioritizes T0054 and T0057 as the most likely candidates for transmission, based on plasmid linkage and CP gene match, but does not confirm probability of transmission.",
+      "alternative_explanations": [
+        "Persistent reservoir in the environment or shared equipment.",
+        "Intermediate hosts or unsampled transmission pathways.",
+        "Horizontal gene transfer via environmental surfaces."
+      ],
+      "limitations": [
+        "No clonal linkage (label_clonal_link = 0) between T0058 and top-ranked candidates.",
+        "No environmental isolates have been tested for plasmid linkage.",
+        "WGS relatedness alone does not confirm direct donor-to-recipient transfer."
+      ],
+      "direct_transmission_proven": false,
+      "conclusion": "The evidence supports a plasmid-mediated resistance transfer from patient T0054 or T0057 to T0058, but direct transmission cannot be definitively proven without further WGS and environmental plasmid analysis."
+    }
+  },
+  {
+    "target_id": "T0080",
+    "model": "qwen3:8b",
+    "initial_investigation": {
+      "target_id": "HTS00405",
+      "mechanism": "ENVIRONMENT_ASSOCIATED_PLASMID",
+      "confidence": "moderate",
+      "headline": "The acquisition is consistent with plasmid-mediated circulation of resistance genes in the hospital environment.",
+      "key_evidence": [
+        "Target isolate HTS00405 is *K. pneumoniae* ST15 carrying blaOXA-181.",
+        "Multiple prior isolates (HTS00105, HTS00356, HTS00405) carry blaOXA-181 or NDM-5.",
+        "Plasmid linkage confirmed via WGS for all prior isolates.",
+        "No clonal linkage between target isolate and prior isolates.",
+        "Temporal range of prior isolates spans 253 days, with some within 48 days of the target isolate.",
+        "No confirmed hospital contact beyond subject ID prefix assumption."
+      ],
+      "model_ranking_interpretation": "XGBoost prioritises candidates with shared resistance genes and plasmid linkage, but does not confirm direct transmission.",
+      "alternative_explanations": [
+        "Persistent environmental reservoir of plasmid-mediated resistance.",
+        "Intermediate hosts or unsampled transmission events.",
+        "Cross-species plasmid transfer between *K. pneumoniae* and *E. coli*."
+      ],
+      "limitations": [
+        "Hospital matching is based on subject ID prefix, not confirmed spatial contact.",
+        "No clonal linkage, so transmission cannot be confirmed.",
+        "Plasmid dissemination may involve multiple, unsampled sources."
+      ],
+      "direct_transmission_proven": false,
+      "conclusion": "The acquisition is consistent with plasmid-mediated circulation of resistance genes in the hospital environment, but direct transmission cannot be confirmed. The presence of shared resistance genes and plasmid linkage supports environmental or intermediate host transmission, though further investigation is needed to resolve the exact mechanism."
+    },
+    "critic_review": {
+      "target_id": "HTS00405",
+      "verdict": "SUPPORTED_WITH_REVISIONS",
+      "chronology_issue": false,
+      "wgs_interpretation_issue": false,
+      "model_overreach_issue": false,
+      "causal_overclaim_issue": true,
+      "issues": [
+        "The conclusion implies plasmid-mediated direct transmission without confirming it.",
+        "The 48-day temporal window is presented as evidence of direct transmission, but it is not sufficient to establish causality."
+      ],
+      "required_revisions": [
+        "Clarify that plasmid linkage does not confirm direct transmission, even though it is inferred in the conclusion.",
+        "Explicitly state that the 48-day temporal window is correlational, not causal."
+      ],
+      "recommended_mechanism": "ENVIRONMENT_ASSOCIATED_PLASMID",
+      "revised_conclusion": "The acquisition is consistent with plasmid-mediated circulation of resistance genes in the hospital environment, but direct transmission cannot be confirmed. The presence of shared resistance genes and plasmid linkage supports environmental or intermediate host transmission, though further investigation is needed to resolve the exact mechanism."
+    },
+    "final_investigation": {
+      "target_id": "T0080",
+      "mechanism": "PATIENT_ASSOCIATED_PLASMID",
+      "confidence": "moderate",
+      "headline": "The acquisition is consistent with patient-associated plasmid circulation, but not direct clonal transmission.",
+      "key_evidence": [
+        "Multiple prior patient isolates (T0054, T0068, T0057, T0076) show plasmid compatibility with the target isolate.",
+        "All top-ranked candidates share the same CP family and exact CP gene.",
+        "No clonal WGS linkage was found between the target isolate and any prior patient isolate.",
+        "XGBoost ranks these candidates highly based on phenotypic and epidemiological similarity."
+      ],
+      "model_ranking_interpretation": "The XGBoost model prioritises candidates with strong phenotypic and epidemiological ties, such as same CP family and species, but does not provide calibrated probability of transmission.",
+      "alternative_explanations": [
+        "Persistent plasmid circulation in the hospital environment.",
+        "Intermediate hosts or environmental reservoirs not sampled.",
+        "Horizontal gene transfer between unrelated isolates."
+      ],
+      "limitations": [
+        "No clonal WGS link was found, so direct transmission cannot be confirmed.",
+        "XGBoost ranking is not a probability of transmission.",
+        "Environmental sources were not evaluated in this report."
+      ],
+      "direct_transmission_proven": false,
+      "conclusion": "The acquisition is consistent with plasmid-mediated resistance transmission from prior patient isolates, but no direct clonal link was found. Further investigation into plasmid typing and environmental sampling is recommended."
+    }
+  },
+  {
+    "target_id": "T0081",
+    "model": "qwen3:8b",
+    "initial_investigation": {
+      "target_id": "T0081",
+      "mechanism": "PATIENT_ASSOCIATED_CLONAL",
+      "confidence": "moderate",
+      "headline": "The acquisition of CPO in patient T0081 is consistent with clonal circulation associated with prior patient isolates.",
+      "key_evidence": [
+        "Direct clonal WGS linkage to patient T0068 (sample HTS-P340) with same species, ST, and exact CP-gene (blaOXA-181).",
+        "Direct clonal WGS linkage to patient T0054 (sample HTS-P315) with same species, ST, and exact CP-gene (blaOXA-181).",
+        "Both prior patient isolates had GeneXpert result OXA48, matching the target's CP-gene.",
+        "Temporal relation of prior isolates (35 and 63 days before acquisition)."
+      ],
+      "model_ranking_interpretation": "The XGBoost ranking prioritises plausible candidate sources, but WGS evidence takes precedence in determining the mechanism of CPO acquisition.",
+      "alternative_explanations": [
+        "Persistent circulation of the same clonal lineage in the hospital environment.",
+        "Intermediate hosts or unsampled transmission events.",
+        "Long time interval between prior isolates and acquisition weakens direct transmission claims."
+      ],
+      "limitations": [
+        "Hospital matching is based on subject-ID-prefix assumption, not confirmed spatial overlap.",
+        "No direct plasmid linkage evidence is present.",
+        "XGBoost ranking is not a calibrated probability of transmission."
+      ],
+      "direct_transmission_proven": false,
+      "conclusion": "The acquisition of CPO in patient T0081 is consistent with clonal circulation associated with prior patient isolates, but direct transmission cannot be proven. The evidence supports patient-associated clonal circulation, though alternative explanations such as persistent reservoirs or intermediate hosts remain plausible."
+    },
+    "critic_review": {
+      "target_id": "T0081",
+      "verdict": "SUPPORTED_WITH_REVISIONS",
+      "chronology_issue": false,
+      "wgs_interpretation_issue": false,
+      "model_overreach_issue": false,
+      "causal_overclaim_issue": false,
+      "issues": [
+        "The report correctly identifies direct clonal WGS linkage to prior isolates but could clarify that clonal linkage supports circulation rather than direct transmission.",
+        "The report acknowledges the temporal distance as a limitation, but could explicitly state that the time gap weakens direct transmission claims."
+      ],
+      "required_revisions": [
+        "Revise confidence level to reflect the temporal distance and unconfirmed hospital overlap.",
+        "Clarify that clonal linkage supports circulation rather than direct transmission to avoid causal overclaiming."
+      ],
+      "recommended_mechanism": "PATIENT_ASSOCIATED_CLONAL",
+      "revised_conclusion": "The acquisition of CPO in patient T0081 is consistent with patient-associated clonal circulation, as supported by direct WGS linkage to prior isolates. While direct transmission cannot be definitively proven, alternative explanations such as persistent reservoirs or intermediate hosts remain plausible. The evidence supports clonal circulation, but the conclusion should emphasize the distinction between clonal linkage and direct transmission."
+    },
+    "final_investigation": {
+      "target_id": "T0081",
+      "mechanism": "PATIENT_ASSOCIATED_CLONAL",
+      "confidence": "moderate",
+      "headline": "The acquisition is consistent with patient-associated clonal circulation of a carbapenemase-producing organism.",
+      "key_evidence": [
+        "Direct clonal WGS link confirmed with T0068 (HTS-P340) and T0054 (HTS-P315).",
+        "Same CP family, exact gene, species, and sequence type observed.",
+        "XGBoost ranks T0068 (HTS-P348) and T0054 (HTS-P315) as high probability candidates.",
+        "T0076 (HTS-P387) is the closest in time but lacks WGS evidence."
+      ],
+      "model_ranking_interpretation": "The XGBoost model prioritizes candidates with strong genetic compatibility, such as same CP family, exact gene, and sequence type, but does not provide calibrated probability of transmission.",
+      "alternative_explanations": [
+        "Persistent reservoir or long-term circulation of the organism in the hospital environment.",
+        "Intermediate hosts or unsampled transmission events.",
+        "Temporal proximity without direct transmission."
+      ],
+      "limitations": [
+        "No direct WGS link for T0068 (HTS-P348) and T0054 (HTS-P315), despite high XGBoost ranking.",
+        "No spatial or environmental matching confirmed for known CPO-positive patients.",
+        "XGBoost ranking is not a probability of transmission but a prioritization of plausible sources."
+      ],
+      "direct_transmission_proven": false,
+      "conclusion": "The acquisition is consistent with patient-associated clonal circulation, supported by direct WGS clonal links with earlier patient isolates. However, direct transmission cannot be proven without further evidence. The XGBoost model highlights genetic compatibility as a key factor, but WGS evidence remains the highest priority for confirming transmission."
+    }
+  },
+  {
+    "target_id": "T0124",
+    "model": "qwen3:8b",
+    "initial_investigation": {
+      "target_id": "T0124",
+      "mechanism": "ENVIRONMENT_ASSOCIATED_CLONAL",
+      "confidence": "moderate",
+      "headline": "The acquisition of CPO in T0124 is consistent with environment-associated clonal circulation.",
+      "key_evidence": [
+        "Direct WGS clonal link between HTS-E186 (environmental sample) and T0124 isolate.",
+        "Same species (Pseudomonas aeruginosa), ST823, and exact CP-gene (blaVIM-2).",
+        "Hospital match confirmed for both target and source.",
+        "XGBoost ranks HTS-E241 as a high candidate, but no direct WGS link exists."
+      ],
+      "model_ranking_interpretation": "HTS-E241 is a high-ranked candidate due to shared resistance profiles and temporal proximity, but this does not confirm transmission. XGBoost prioritizes plausible sources, not probabilities.",
+      "alternative_explanations": [
+        "Persistent environmental reservoir of the clonal lineage.",
+        "Intermediate hosts or unsampled transmission events.",
+        "Temporal proximity without direct transmission."
+      ],
+      "limitations": [
+        "No direct WGS plasmid linkage to confirm resistance gene transfer.",
+        "Same-day observations are directionally ambiguous.",
+        "Hospital matching relies on subject-ID-prefix assumption, not spatial overlap."
+      ],
+      "direct_transmission_proven": false,
+      "conclusion": "The acquisition of CPO in T0124 supports environment-associated clonal circulation, but direct transmission is not proven. The data is consistent with persistent environmental circulation of a clonal lineage carrying blaVIM-2."
+    },
+    "critic_review": {
+      "target_id": "T0124",
+      "verdict": "SUPPORTED_WITH_REVISIONS",
+      "chronology_issue": false,
+      "wgs_interpretation_issue": false,
+      "model_overreach_issue": true,
+      "causal_overclaim_issue": false,
+      "issues": [
+        "The Investigator report incorrectly interprets XGBoost ranking as a transmission probability, which is not supported by the evidence.",
+        "The report overstates the role of HTS-E241 as a high-ranked candidate without direct WGS linkage, which is not sufficient to confirm transmission."
+      ],
+      "required_revisions": [
+        "Revise the interpretation of XGBoost ranking to clarify that it is a prioritization model, not a probability of transmission.",
+        "Avoid treating HTS-E241 as a confirmed source without direct WGS linkage."
+      ],
+      "recommended_mechanism": "ENVIRONMENT_ASSOCIATED_CLONAL",
+      "revised_conclusion": "The acquisition of CPO in T0124 supports environment-associated clonal circulation, but direct transmission is not proven. The data is consistent with persistent environmental circulation of a clonal lineage carrying blaVIM-2, and HTS-E241 remains a high-ranked candidate without direct WGS evidence."
+    },
+    "final_investigation": {
+      "target_id": "T0124",
+      "mechanism": "ENVIRONMENT_ASSOCIATED_CLONAL",
+      "confidence": "moderate",
+      "headline": "The acquisition is consistent with environmental-associated clonal circulation of a blaVIM-2-producing Pseudomonas aeruginosa strain.",
+      "key_evidence": [
+        "Direct clonal WGS link between the target isolate (HTS00637) and the environmental sample HTS-E186 (T0060).",
+        "Confirmed hospital match between the environmental sample and the target isolate.",
+        "XGBoost ranks the environmental sample HTS-E186 as the second most likely source.",
+        "The environmental sample HTS-E241 (T0084) is ranked first by the model but lacks WGS confirmation."
+      ],
+      "model_ranking_interpretation": "The XGBoost model prioritizes environmental samples HTS-E186 and HTS-E241 as potential sources, but these rankings do not imply probability of transmission, only relative likelihood based on the model's features.",
+      "alternative_explanations": [
+        "Persistent environmental reservoir of the blaVIM-2-producing strain.",
+        "Intermediate hosts or unsampled transmission events.",
+        "Contamination or cross-contamination from other sources."
+      ],
+      "limitations": [
+        "The model rankings are not definitive proof of transmission.",
+        "No WGS confirmation for the top-ranked environmental sample HTS-E241.",
+        "Limited genetic matching with patient sources reduces their likelihood as direct transmission sources."
+      ],
+      "direct_transmission_proven": false,
+      "conclusion": "The acquisition is best explained by environmental-associated clonal circulation of a blaVIM-2-producing Pseudomonas aeruginosa strain, supported by direct WGS evidence and model prioritization. However, direct donor-to-recipient transfer cannot be definitively proven with the current data."
+    }
+  },
+  {
+    "target_id": "T0125",
+    "model": "qwen3:8b",
+    "initial_investigation": {
+      "target_id": "T0125",
+      "mechanism": "NO_DIRECT_WGS_LINK",
+      "confidence": "moderate",
+      "headline": "The acquisition is consistent with patient-associated CP gene circulation, but no direct WGS evidence confirms transmission.",
+      "key_evidence": [
+        "Top-ranked sources (T0121) share same CP family and exact CP gene with T0125.",
+        "T0121 samples occurred 6–13 days before acquisition.",
+        "No direct clonal or plasmid WGS links between T0125 and any source.",
+        "Environmental samples (T0036) share same CP family/gene but no species/st match.",
+        "All sources are from the same hospital, suggesting potential environmental contamination."
+      ],
+      "model_ranking_interpretation": "XGBoost prioritizes patient sources (T0121, T0111) over environmental ones, but rankings do not imply probability of transmission.",
+      "alternative_explanations": [
+        "Persistent environmental reservoir (T0036) could explain CP gene match.",
+        "Intermediate hosts or unsampled transmission events may account for CP gene similarity.",
+        "Cross-species transmission or horizontal gene transfer could explain CP gene match without direct WGS linkage."
+      ],
+      "limitations": [
+        "No direct WGS evidence confirms transmission.",
+        "CP gene similarity does not equate to clonal linkage.",
+        "Hospital T is shared by all sources, but no specific location or contact tracing is provided."
+      ],
+      "direct_transmission_proven": false,
+      "conclusion": "The acquisition is consistent with patient-associated CP gene circulation, but no direct WGS evidence confirms transmission. The top-ranked patient (T0121) is the most plausible suspect due to proximity in time and exact CP gene match, but further analysis is required to confirm transmission pathways."
+    },
+    "critic_review": {
+      "target_id": "T0125",
+      "verdict": "SUPPORTED_WITH_REVISIONS",
+      "chronology_issue": false,
+      "wgs_interpretation_issue": true,
+      "model_overreach_issue": true,
+      "causal_overclaim_issue": true,
+      "issues": [
+        "XGBoost rankings are misinterpreted as transmission probabilities without WGS evidence.",
+        "Causal claims about direct transmission are made without direct WGS clonal or plasmid links.",
+        "Confusion between genomic family similarity and direct transmission is present."
+      ],
+      "required_revisions": [
+        "Avoid interpreting XGBoost rankings as transmission probabilities; use them only as correlation indicators.",
+        "Revise causal claims to reflect that direct transmission cannot be confirmed without WGS evidence.",
+        "Clarify the distinction between genomic family similarity and direct transmission."
+      ],
+      "recommended_mechanism": "NO_DIRECT_WGS_LINK",
+      "revised_conclusion": "The report overreaches by interpreting XGBoost rankings as transmission probabilities without WGS evidence. Direct transmission cannot be confirmed, and the correct status is NO_DIRECT_WGS_LINK."
+    },
+    "final_investigation": {
+      "target_id": "T0125",
+      "mechanism": "NO_DIRECT_WGS_LINK",
+      "confidence": "moderate",
+      "headline": "The acquisition is consistent with patient-associated circulation, but no direct WGS link was found.",
+      "key_evidence": [
+        "Top-ranked patient sources (T0121) share the same CP family (NDM) and exact gene (blaNDM-1) as the target.",
+        "T0121 isolates match the target species (K. pneumoniae), but ST does not match.",
+        "Environment sources (T0036) lack species match, reducing their likelihood.",
+        "XGBoost ranks T0121 as the most probable source based on genetic and temporal features."
+      ],
+      "model_ranking_interpretation": "The XGBoost model prioritizes T0121 as the most likely source, but this does not equate to a confirmed probability of transmission.",
+      "alternative_explanations": [
+        "Persistent environmental contamination from T0121's clinical setting.",
+        "Intermediate hosts or unsampled transmission pathways.",
+        "Longer transmission timelines with no direct genetic link."
+      ],
+      "limitations": [
+        "No direct WGS clonal or plasmid link to any candidate.",
+        "Species mismatch for environment sources reduces their likelihood.",
+        "ST discrepancy may indicate minor clonal divergence or lack of resolution."
+      ],
+      "direct_transmission_proven": false,
+      "conclusion": "The acquisition is consistent with patient-associated circulation, but no direct genetic evidence of transmission was found. T0121 is the most likely source based on model rankings and shared genetic features, but further investigation is needed to confirm."
+    }
+  }
+]

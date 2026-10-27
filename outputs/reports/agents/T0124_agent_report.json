@@ -1,0 +1,72 @@
+{
+  "target_id": "T0124",
+  "model": "qwen3:8b",
+  "initial_investigation": {
+    "target_id": "T0124",
+    "mechanism": "ENVIRONMENT_ASSOCIATED_CLONAL",
+    "confidence": "moderate",
+    "headline": "The acquisition of CPO in T0124 is consistent with environment-associated clonal circulation.",
+    "key_evidence": [
+      "Direct WGS clonal link between HTS-E186 (environmental sample) and T0124 isolate.",
+      "Same species (Pseudomonas aeruginosa), ST823, and exact CP-gene (blaVIM-2).",
+      "Hospital match confirmed for both target and source.",
+      "XGBoost ranks HTS-E241 as a high candidate, but no direct WGS link exists."
+    ],
+    "model_ranking_interpretation": "HTS-E241 is a high-ranked candidate due to shared resistance profiles and temporal proximity, but this does not confirm transmission. XGBoost prioritizes plausible sources, not probabilities.",
+    "alternative_explanations": [
+      "Persistent environmental reservoir of the clonal lineage.",
+      "Intermediate hosts or unsampled transmission events.",
+      "Temporal proximity without direct transmission."
+    ],
+    "limitations": [
+      "No direct WGS plasmid linkage to confirm resistance gene transfer.",
+      "Same-day observations are directionally ambiguous.",
+      "Hospital matching relies on subject-ID-prefix assumption, not spatial overlap."
+    ],
+    "direct_transmission_proven": false,
+    "conclusion": "The acquisition of CPO in T0124 supports environment-associated clonal circulation, but direct transmission is not proven. The data is consistent with persistent environmental circulation of a clonal lineage carrying blaVIM-2."
+  },
+  "critic_review": {
+    "target_id": "T0124",
+    "verdict": "SUPPORTED_WITH_REVISIONS",
+    "chronology_issue": false,
+    "wgs_interpretation_issue": false,
+    "model_overreach_issue": true,
+    "causal_overclaim_issue": false,
+    "issues": [
+      "The Investigator report incorrectly interprets XGBoost ranking as a transmission probability, which is not supported by the evidence.",
+      "The report overstates the role of HTS-E241 as a high-ranked candidate without direct WGS linkage, which is not sufficient to confirm transmission."
+    ],
+    "required_revisions": [
+      "Revise the interpretation of XGBoost ranking to clarify that it is a prioritization model, not a probability of transmission.",
+      "Avoid treating HTS-E241 as a confirmed source without direct WGS linkage."
+    ],
+    "recommended_mechanism": "ENVIRONMENT_ASSOCIATED_CLONAL",
+    "revised_conclusion": "The acquisition of CPO in T0124 supports environment-associated clonal circulation, but direct transmission is not proven. The data is consistent with persistent environmental circulation of a clonal lineage carrying blaVIM-2, and HTS-E241 remains a high-ranked candidate without direct WGS evidence."
+  },
+  "final_investigation": {
+    "target_id": "T0124",
+    "mechanism": "ENVIRONMENT_ASSOCIATED_CLONAL",
+    "confidence": "moderate",
+    "headline": "The acquisition is consistent with environmental-associated clonal circulation of a blaVIM-2-producing Pseudomonas aeruginosa strain.",
+    "key_evidence": [
+      "Direct clonal WGS link between the target isolate (HTS00637) and the environmental sample HTS-E186 (T0060).",
+      "Confirmed hospital match between the environmental sample and the target isolate.",
+      "XGBoost ranks the environmental sample HTS-E186 as the second most likely source.",
+      "The environmental sample HTS-E241 (T0084) is ranked first by the model but lacks WGS confirmation."
+    ],
+    "model_ranking_interpretation": "The XGBoost model prioritizes environmental samples HTS-E186 and HTS-E241 as potential sources, but these rankings do not imply probability of transmission, only relative likelihood based on the model's features.",
+    "alternative_explanations": [
+      "Persistent environmental reservoir of the blaVIM-2-producing strain.",
+      "Intermediate hosts or unsampled transmission events.",
+      "Contamination or cross-contamination from other sources."
+    ],
+    "limitations": [
+      "The model rankings are not definitive proof of transmission.",
+      "No WGS confirmation for the top-ranked environmental sample HTS-E241.",
+      "Limited genetic matching with patient sources reduces their likelihood as direct transmission sources."
+    ],
+    "direct_transmission_proven": false,
+    "conclusion": "The acquisition is best explained by environmental-associated clonal circulation of a blaVIM-2-producing Pseudomonas aeruginosa strain, supported by direct WGS evidence and model prioritization. However, direct donor-to-recipient transfer cannot be definitively proven with the current data."
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "target_id": "T0036",
+  "model": "qwen3:8b",
+  "initial_investigation": {
+    "target_id": "T0036",
+    "mechanism": "ENVIRONMENT_ASSOCIATED_CLONAL",
+    "confidence": "moderate",
+    "headline": "The acquisition is consistent with environmental-associated clonal circulation, though no direct WGS link was found.",
+    "key_evidence": [
+      "Top-ranked environmental samples (HTS-E120/HTS-E121) share same CP family, exact gene, species, and ST as the target.",
+      "Environmental samples were collected 9 days before acquisition and from the same ward (source_subject_id = T0036).",
+      "No direct WGS clonal or plasmid linkage was found between the target and any prior patient or environmental isolates."
+    ],
+    "model_ranking_interpretation": "The XGBoost model prioritizes environmental samples due to their temporal proximity, genetic similarity, and shared ward location, but these rankings do not confirm direct transmission.",
+    "alternative_explanations": [
+      "Persistent environmental reservoirs (e.g., surfaces, equipment) may have contributed to the acquisition.",
+      "Intermediate hosts or unsampled transmission pathways could explain the lack of direct WGS linkage.",
+      "The target may have acquired the pathogen through a different route or from an unsampled source."
+    ],
+    "limitations": [
+      "No direct WGS clonal or plasmid linkage was found between the target and any prior isolates.",
+      "XGBoost rankings are probabilistic and should be interpreted alongside contextual factors.",
+      "Environmental samples were not tested for specific resistance genes (e.g., NDM-1) to confirm their role."
+    ],
+    "direct_transmission_proven": false,
+    "conclusion": "The acquisition is most consistent with environmental-associated clonal circulation, though no direct genetic transmission was confirmed. Further investigation into environmental contamination and shared facilities is recommended."
+  },
+  "critic_review": {
+    "target_id": "T0036",
+    "verdict": "SUPPORTED_WITH_REVISIONS",
+    "chronology_issue": false,
+    "wgs_interpretation_issue": true,
+    "model_overreach_issue": false,
+    "causal_overclaim_issue": true,
+    "issues": [
+      "No direct clonal or plasmid linkage established between source and target isolates.",
+      "Genomic similarity does not confirm direct transmission; only relatedness is observed.",
+      "Causal overclaim: the report may imply direct donor-to-recipient transmission without sufficient evidence."
+    ],
+    "required_revisions": [
+      "Avoid implying direct transmission without clonal or plasmid linkage evidence.",
+      "Clarify that genomic similarity does not equate to direct transmission.",
+      "Recommend further analysis to establish directional phylogenetic relationships."
+    ],
+    "recommended_mechanism": "NO_DIRECT_WGS_LINK",
+    "revised_conclusion": "The environment sources are temporally and spatially associated with the target isolate, and they share genomic features (species, ST, and CP gene). However, there is no direct clonal or plasmid linkage, and the WGS data does not confirm a directional transmission path. Further analysis is required to resolve the transmission mechanism."
+  },
+  "final_investigation": {
+    "target_id": "T0036",
+    "mechanism": "NO_DIRECT_WGS_LINK",
+    "confidence": "moderate",
+    "headline": "The acquisition is temporally and spatially associated with environmental isolates sharing genomic features, but no direct clonal or plasmid linkage was found.",
+    "key_evidence": [
+      "Top-ranked environmental samples (HTS-E120/HTS-E121) share same CP family, exact gene, species, and ST as the target.",
+      "Environmental samples were collected 9 days before acquisition and from the same ward (source_subject_id = T0036).",
+      "No direct WGS clonal or plasmid linkage was found between the target and any prior patient or environmental isolates."
+    ],
+    "model_ranking_interpretation": "The XGBoost model prioritizes environmental samples due to their temporal proximity, genetic similarity, and shared ward location, but these rankings do not confirm direct transmission.",
+    "alternative_explanations": [
+      "Persistent environmental reservoirs (e.g., surfaces, equipment) may have contributed to the acquisition.",
+      "Intermediate hosts or unsampled transmission pathways could explain the lack of direct WGS linkage.",
+      "The target may have acquired the pathogen through a different route or from an unsampled source."
+    ],
+    "limitations": [
+      "No direct WGS clonal or plasmid linkage was found between the target and any prior isolates.",
+      "XGBoost rankings are probabilistic and should be interpreted alongside contextual factors.",
+      "Environmental samples were not tested for specific resistance genes (e.g., NDM-1) to confirm their role."
+    ],
+    "direct_transmission_proven": false,
+    "conclusion": "The environment sources are temporally and spatially associated with the target isolate, and they share genomic features (species, ST, and CP gene). However, there is no direct clonal or plasmid linkage, and the WGS data does not confirm a directional transmission path. Further analysis is required to resolve the transmission mechanism."
+  }
+}
