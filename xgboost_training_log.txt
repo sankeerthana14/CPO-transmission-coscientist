@@ -1,0 +1,174 @@
+(cpo-coscientist) sankeerthana@Satinis-MacBook-Air CPO-transmission-coscientist % 
+PYTHONPATH=src python scripts/08_train_xgboost.py
+
+Training and evaluating XGBoost...
+
+========================================================================================================================
+XGBOOST — LEAVE-ONE-TARGET-OUT RESULTS
+========================================================================================================================
+model_name  n_features  pooled_oof_auprc  pooled_oof_auroc  mean_positive_target_auprc  mean_positive_target_auroc  mean_mrr  hit_at_1  hit_at_3  hit_at_5  mean_recall_at_3  mean_recall_at_5  median_best_positive_rank  mean_max_score_negative_targets  positive_test_targets  negative_only_test_targets
+      CORE           5          0.103960          0.850761                    0.202881                    0.864793  0.363782      0.25      0.50       0.5          0.160714          0.223214                        7.5                         0.723027                      4                           3
+ AUGMENTED           9          0.311224          0.963234                    0.435655                    0.955664  0.687500      0.50      0.75       1.0          0.446429          0.607143                        1.5                         0.912724                      4                           3
+
+========================================================================================================================
+PER-TARGET RESULTS
+========================================================================================================================
+model_name held_out_target  test_rows  test_positive  average_precision  roc_auc  best_positive_rank  mean_positive_rank      mrr  hit_at_1  hit_at_3  hit_at_5  recall_at_3  recall_at_5  max_predicted_probability
+      CORE           T0036         49              0                NaN      NaN                 NaN                 NaN      NaN       NaN       NaN       NaN          NaN          NaN                   0.863777
+      CORE           T0052         72              0                NaN      NaN                 NaN                 NaN      NaN       NaN       NaN       NaN          NaN          NaN                   0.500951
+      CORE           T0058         85              4           0.554113 0.922840                 1.0            9.750000 1.000000       1.0       1.0       1.0     0.500000     0.750000                   0.829305
+      CORE           T0080        150              7           0.140245 0.737263                 3.0           44.428571 0.333333       0.0       1.0       1.0     0.142857     0.142857                   0.881614
+      CORE           T0081        130              2           0.078704 0.886719                12.0           14.500000 0.083333       0.0       0.0       0.0     0.000000     0.000000                   0.867214
+      CORE           T0124        252              1           0.038462 0.912351                26.0           26.000000 0.038462       0.0       0.0       0.0     0.000000     0.000000                   0.613477
+      CORE           T0125        261              0                NaN      NaN                 NaN                 NaN      NaN       NaN       NaN       NaN          NaN          NaN                   0.804353
+ AUGMENTED           T0036         49              0                NaN      NaN                 NaN                 NaN      NaN       NaN       NaN       NaN          NaN          NaN                   0.942496
+ AUGMENTED           T0052         72              0                NaN      NaN                 NaN                 NaN      NaN       NaN       NaN       NaN          NaN          NaN                   0.873777
+ AUGMENTED           T0058         85              4           0.541667 0.933642                 1.0            8.000000 1.000000       1.0       1.0       1.0     0.500000     0.500000                   0.931260
+ AUGMENTED           T0080        150              7           0.504524 0.930070                 1.0           15.000000 1.000000       1.0       1.0       1.0     0.285714     0.428571                   0.963329
+ AUGMENTED           T0081        130              2           0.196429 0.960938                 4.0            6.000000 0.250000       0.0       0.0       1.0     0.000000     0.500000                   0.943995
+ AUGMENTED           T0124        252              1           0.500000 0.998008                 2.0            2.000000 0.500000       0.0       1.0       1.0     1.000000     1.000000                   0.672710
+ AUGMENTED           T0125        261              0                NaN      NaN                 NaN                 NaN      NaN       NaN       NaN       NaN          NaN          NaN                   0.921898
+
+========================================================================================================================
+AUGMENTED MODEL — TOP 10 CANDIDATES PER TARGET
+========================================================================================================================
+
+============================ T0036 ============================
+target_id  rank_within_target  predicted_probability  y_true source_type source_subject_id source_sample_id  days_before_acquisition  same_cp_family_gx  same_cp_family_isolate  same_exact_cp_gene_isolate  same_species_any  same_st_any
+    T0036                   1               0.942496       0 environment             T0036         HTS-E120                        9                  1                       1                           1                 1            1
+    T0036                   2               0.942496       0 environment             T0036         HTS-E121                        9                  1                       1                           1                 1            1
+    T0036                   3               0.780763       0     patient             T0027         HTS-P115                       63                  1                       1                           1                 0            0
+    T0036                   4               0.757698       0     patient             T0027         HTS-P117                       60                  0                       1                           1                 0            0
+    T0036                   5               0.498511       0     patient             T0003          HTS-P21                      186                  1                       1                           1                 0            0
+    T0036                   6               0.334712       0     patient             T0001           HTS-P1                      235                  1                       1                           1                 0            0
+    T0036                   7               0.316379       0     patient             T0001           HTS-P4                      222                  0                       1                           1                 0            0
+    T0036                   8               0.068239       0     patient             T0034         HTS-P146                        3                  1                       1                           0                 0            0
+    T0036                   9               0.065437       0     patient             T0034         HTS-P141                       11                  1                       1                           0                 0            0
+    T0036                  10               0.065437       0     patient             T0034         HTS-P142                       16                  1                       1                           0                 0            0
+
+============================ T0052 ============================
+target_id  rank_within_target  predicted_probability  y_true source_type source_subject_id source_sample_id  days_before_acquisition  same_cp_family_gx  same_cp_family_isolate  same_exact_cp_gene_isolate  same_species_any  same_st_any
+    T0052                   1               0.873777       0     patient             T0042         HTS-P161                       77                  1                       1                           1                 1            1
+    T0052                   2               0.723968       0 environment             T0013          HTS-E32                      305                  1                       1                           1                 1            1
+    T0052                   3               0.641627       0 environment             T0016          HTS-E86                      199                  1                       1                           1                 1            1
+    T0052                   4               0.559812       0     patient             T0040         HTS-P160                       90                  1                       1                           1                 0            0
+    T0052                   5               0.559812       0     patient             T0040         HTS-P159                       96                  1                       1                           1                 0            0
+    T0052                   6               0.559812       0     patient             T0040         HTS-P158                       97                  1                       1                           1                 0            0
+    T0052                   7               0.470498       0     patient             T0014          HTS-P39                      291                  1                       1                           1                 0            0
+    T0052                   8               0.470498       0     patient             T0014          HTS-P38                      300                  1                       1                           1                 0            0
+    T0052                   9               0.470498       0     patient             T0014          HTS-P29                      310                  1                       1                           1                 0            0
+    T0052                  10               0.023198       0 environment             T0036         HTS-E128                      123                  0                       0                           0                 1            0
+
+============================ T0058 ============================
+target_id  rank_within_target  predicted_probability  y_true source_type source_subject_id source_sample_id  days_before_acquisition  same_cp_family_gx  same_cp_family_isolate  same_exact_cp_gene_isolate  same_species_any  same_st_any
+    T0058                   1               0.931260       1     patient             T0054         HTS-P315                       19                  1                       1                           1                 1            0
+    T0058                   2               0.927650       1     patient             T0057         HTS-P331                        3                  1                       1                           1                 1            0
+    T0058                   3               0.927650       0     patient             T0054         HTS-P321                        6                  1                       1                           1                 1            0
+    T0058                   4               0.890774       0     patient             T0034         HTS-P157                      153                  1                       1                           1                 1            0
+    T0058                   5               0.890774       0     patient             T0034         HTS-P155                      158                  1                       1                           1                 1            0
+    T0058                   6               0.890774       0     patient             T0034         HTS-P153                      168                  1                       1                           1                 1            0
+    T0058                   7               0.730777       0     patient             T0044         HTS-P202                       59                  1                       1                           1                 0            0
+    T0058                   8               0.717646       0     patient             T0057         HTS-P331                        3                  1                       1                           1                 0            0
+    T0058                   9               0.717646       0     patient             T0054         HTS-P321                        6                  1                       1                           1                 0            0
+    T0058                  10               0.713406       1     patient             T0044         HTS-P190                       73                  1                       1                           1                 0            0
+
+============================ T0080 ============================
+target_id  rank_within_target  predicted_probability  y_true source_type source_subject_id source_sample_id  days_before_acquisition  same_cp_family_gx  same_cp_family_isolate  same_exact_cp_gene_isolate  same_species_any  same_st_any
+    T0080                   1               0.963329       1     patient             T0054         HTS-P315                       76                  1                       1                           1                 1            0
+    T0080                   2               0.962269       0     patient             T0054         HTS-P321                       63                  1                       1                           1                 1            0
+    T0080                   3               0.941658       1     patient             T0076         HTS-P387                       19                  1                       1                           1                 1            0
+    T0080                   4               0.941558       0     patient             T0068         HTS-P342                       46                  1                       1                           1                 1            0
+    T0080                   5               0.941558       1     patient             T0068         HTS-P340                       48                  1                       1                           1                 1            0
+    T0080                   6               0.941558       0     patient             T0057         HTS-P336                       54                  1                       1                           1                 1            0
+    T0080                   7               0.941558       0     patient             T0057         HTS-P333                       55                  1                       1                           1                 1            0
+    T0080                   8               0.941558       1     patient             T0057         HTS-P331                       60                  1                       1                           1                 1            0
+    T0080                   9               0.939248       0     patient             T0068         HTS-P348                       33                  1                       1                           1                 1            0
+    T0080                  10               0.927643       1     patient             T0073         HTS-P358                       32                  0                       1                           1                 1            0
+
+============================ T0081 ============================
+target_id  rank_within_target  predicted_probability  y_true source_type source_subject_id source_sample_id  days_before_acquisition  same_cp_family_gx  same_cp_family_isolate  same_exact_cp_gene_isolate  same_species_any  same_st_any
+    T0081                   1               0.943995       0     patient             T0068         HTS-P348                       20                  1                       1                           1                 1            1
+    T0081                   2               0.941425       0     patient             T0073         HTS-P358                       19                  0                       1                           1                 1            0
+    T0081                   3               0.940644       0     patient             T0068         HTS-P342                       33                  1                       1                           1                 1            1
+    T0081                   4               0.940644       1     patient             T0068         HTS-P340                       35                  1                       1                           1                 1            1
+    T0081                   5               0.940644       0     patient             T0057         HTS-P336                       41                  1                       1                           1                 1            0
+    T0081                   6               0.940644       0     patient             T0057         HTS-P333                       42                  1                       1                           1                 1            0
+    T0081                   7               0.940644       0     patient             T0057         HTS-P331                       47                  1                       1                           1                 1            0
+    T0081                   8               0.938682       1     patient             T0054         HTS-P315                       63                  1                       1                           1                 1            1
+    T0081                   9               0.934344       0     patient             T0054         HTS-P321                       50                  1                       1                           1                 1            0
+    T0081                  10               0.933514       0     patient             T0076         HTS-P387                        6                  1                       1                           1                 1            0
+
+============================ T0124 ============================
+target_id  rank_within_target  predicted_probability  y_true source_type source_subject_id source_sample_id  days_before_acquisition  same_cp_family_gx  same_cp_family_isolate  same_exact_cp_gene_isolate  same_species_any  same_st_any
+    T0124                   1               0.672710       0 environment             T0084         HTS-E241                      121                  1                       1                           1                 1            1
+    T0124                   2               0.672710       1 environment             T0060         HTS-E186                      171                  1                       1                           1                 1            1
+    T0124                   3               0.033373       0     patient             T0114         HTS-S446                       16                  0                       0                           0                 1            0
+    T0124                   4               0.031149       0     patient             T0114         HTS-S398                       23                  0                       0                           0                 1            0
+    T0124                   5               0.031101       0     patient             T0042         HTS-P471                       51                  0                       0                           0                 1            0
+    T0124                   6               0.030743       0 environment             T0117         HTS-E353                       17                  1                       0                           0                 1            0
+    T0124                   7               0.027385       0     patient             T0029         HTS-P154                      309                  0                       0                           0                 0            0
+    T0124                   8               0.027385       0     patient             T0034         HTS-P157                      326                  0                       0                           0                 0            0
+    T0124                   9               0.027385       0     patient             T0034         HTS-P157                      326                  0                       0                           0                 0            0
+    T0124                  10               0.027385       0     patient             T0034         HTS-P157                      326                  0                       0                           0                 0            0
+
+============================ T0125 ============================
+target_id  rank_within_target  predicted_probability  y_true source_type source_subject_id source_sample_id  days_before_acquisition  same_cp_family_gx  same_cp_family_isolate  same_exact_cp_gene_isolate  same_species_any  same_st_any
+    T0125                   1               0.921898       0     patient             T0121         HTS-P540                       11                  1                       1                           1                 1            0
+    T0125                   2               0.921898       0     patient             T0121         HTS-P576                       13                  1                       1                           1                 1            0
+    T0125                   3               0.914030       0     patient             T0121         HTS-P541                        6                  1                       1                           1                 1            0
+    T0125                   4               0.834985       0     patient             T0072         HTS-P354                      159                  1                       1                           1                 1            0
+    T0125                   5               0.764557       0     patient             T0111         HTS-P577                       18                  1                       1                           1                 0            0
+    T0125                   6               0.764557       0     patient             T0111         HTS-P547                       23                  1                       1                           1                 0            0
+    T0125                   7               0.764557       0     patient             T0111         HTS-P519                       29                  1                       1                           1                 0            0
+    T0125                   8               0.601911       0     patient             T0029         HTS-P154                      315                  1                       1                           1                 0            0
+    T0125                   9               0.597098       0 environment             T0036         HTS-E128                      351                  1                       1                           1                 0            0
+    T0125                  10               0.597098       0 environment             T0036         HTS-E120                      365                  1                       1                           1                 0            0
+
+========================================================================================================================
+MEAN FEATURE IMPORTANCE (GAIN)
+========================================================================================================================
+model_name                    feature  mean_gain  median_gain
+      CORE          same_cp_family_gx 127.457533   132.941360
+      CORE    days_before_acquisition  52.585288    53.053783
+      CORE         source_gx_positive  43.121308    47.974159
+      CORE     source_gx_family_count  39.260711    40.625160
+      CORE      source_is_environment  32.479578    31.011566
+ AUGMENTED same_exact_cp_gene_isolate 194.922139   202.922882
+ AUGMENTED     same_cp_family_isolate 172.391148   178.588409
+ AUGMENTED          same_cp_family_gx  59.686357    39.330772
+ AUGMENTED           same_species_any  35.448542    35.773411
+ AUGMENTED    days_before_acquisition  33.085332    35.307621
+ AUGMENTED     source_gx_family_count  18.086598    15.866525
+ AUGMENTED                same_st_any  17.506534    12.816108
+ AUGMENTED      source_is_environment  11.872937    12.973633
+ AUGMENTED         source_gx_positive  11.656820     0.000000
+
+========================================================================================================================
+FILES SAVED
+========================================================================================================================
+
+OOF predictions:
+/Users/sankeerthana/Documents/NTU/NTU_PhD/PhD_Course/Research Thesis/CPO-transmission-coscientist/data/processed/xgboost_oof_predictions.csv
+
+Performance summary:
+/Users/sankeerthana/Documents/NTU/NTU_PhD/PhD_Course/Research Thesis/CPO-transmission-coscientist/outputs/tables/table_06_xgboost_summary.xlsx
+
+Per-target metrics:
+/Users/sankeerthana/Documents/NTU/NTU_PhD/PhD_Course/Research Thesis/CPO-transmission-coscientist/outputs/tables/table_06_xgboost_fold_metrics.xlsx
+
+Top-10 rankings:
+/Users/sankeerthana/Documents/NTU/NTU_PhD/PhD_Course/Research Thesis/CPO-transmission-coscientist/outputs/tables/table_06_xgboost_top10_rankings.xlsx
+
+Feature importance:
+/Users/sankeerthana/Documents/NTU/NTU_PhD/PhD_Course/Research Thesis/CPO-transmission-coscientist/outputs/tables/table_06_xgboost_feature_importance.xlsx
+
+Core model:
+/Users/sankeerthana/Documents/NTU/NTU_PhD/PhD_Course/Research Thesis/CPO-transmission-coscientist/outputs/models/xgboost_core.json
+
+Augmented model:
+/Users/sankeerthana/Documents/NTU/NTU_PhD/PhD_Course/Research Thesis/CPO-transmission-coscientist/outputs/models/xgboost_augmented.json
+
+IMPORTANT:
+These probabilities should be interpreted as candidate-ranking scores, not calibrated probabilities of transmission.
+WGS evidence remains the reference label.
+(cpo-coscientist) sankeerthana@Satinis-MacBook-Air CPO-transmission-coscientist % 

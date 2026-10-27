@@ -1,0 +1,12 @@
+pandas>=2.2
+numpy>=1.26
+openpyxl>=3.1
+matplotlib>=3.8
+
+# We will need these later
+scikit-learn>=1.5
+xgboost>=2.1
+shap>=0.46
+
+# Agent packages come later
+python-dotenv>=1.0
