@@ -161,6 +161,8 @@ cpo-transmission-coscientist/
     └── 24_plot_transmission_network.py
 ```
 
+##### NOTE: The results of 12_run_llm_council_v2.py were taken to be the final outputs for the LLM Council stage. Therefore, while reproducing, please feel free to skip running 11_run_llm_council.py and 13_run_llm_council_v2.py.
+
 ---
 
 # 4. Required source data
