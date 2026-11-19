@@ -11,6 +11,185 @@
   <meta property="og:image" content="https://sankeerthana14.github.io/CPO-transmission-coscientist/images/poster-preview.webp">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="stylesheet" href="assets/style.css">
+  <!-- Updated editorial typography and layout (no separate CSS file required). -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+/* CPO Research — editorial redesign. Embedded after the original stylesheet. */
+:root {
+  --ink: #202a24;
+  --dark: #202a24;
+  --forest: #2d4e3b;
+  --olive: #58725b;
+  --terracotta: #ae603e;
+  --clay: #ae603e;
+  --cream: #fff;
+  --canvas: #f7f9f6;
+  --pale: #f2f5f1;
+  --line: #e0e6df;
+  --muted: #66736b;
+  --shadow: none;
+  --radius: 5px;
+  --container: 1130px;
+}
+html { scroll-padding-top: 72px; }
+body {
+  background: #fff;
+  color: var(--ink);
+  font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.65;
+  letter-spacing: -.007em;
+}
+h1, h2, h3 {
+  font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+  color: #1e2922;
+  font-weight: 500 !important;
+  letter-spacing: -.037em;
+  line-height: 1.18;
+}
+.kicker, .hero-eyebrow, .panel-label, .method-number,
+.card-ordinal, .visual-top, .mini-label, .figure-notice,
+.hero-metric span, .footer-bottom, .section-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 500;
+  letter-spacing: .035em;
+}
+.container { width: min(var(--container), calc(100% - 68px)); }
+.site-header {
+  height: 66px;
+  background: rgba(255, 255, 255, .98);
+  border-bottom: 1px solid var(--line);
+  box-shadow: none;
+  backdrop-filter: blur(10px);
+}
+.brand-icon { width: 33px; height: 33px; border-radius: 5px; background: #294534; }
+.brand-icon svg { width: 22px; height: 22px; }
+.brand-text { gap: 3px; letter-spacing: 0; }
+.brand-text strong { font-size: 12px; font-weight: 600; letter-spacing: .02em; }
+.brand-text small { font-size: 8px; font-weight: 500; letter-spacing: .06em; }
+.site-nav { gap: 21px; }
+.site-nav > a { font-size: 12px; font-weight: 500; }
+.site-nav .nav-button { border-radius: 4px; padding: 9px 14px; font-weight: 500; }
+.hero { background: #fff; padding: 62px 0 0; }
+.hero-noise { display: none; }
+.hero-layout { grid-template-columns: 1.04fr .96fr; gap: 45px; padding-bottom: 54px; }
+.hero-eyebrow { color: #758078; font-size: 10px; margin-bottom: 17px; }
+.eyebrow-dot, .pulse-dot { box-shadow: none; width: 6px; height: 6px; }
+.hero h1 {
+  font-size: clamp(37px, 4.15vw, 54px) !important;
+  line-height: 1.12;
+  font-weight: 500 !important;
+  letter-spacing: -.052em;
+  max-width: 620px;
+}
+.hero h1 em, .section-heading h2 span, .case-copy h2 span,
+.privacy-section h2 span, .resources-section h2 span {
+  color: #52715a;
+}
+.hero-subtitle { font-size: 17px; font-weight: 400; line-height: 1.55; margin-top: 18px; color: #344a3b; }
+.hero-detail { font-size: 13.5px; margin-top: 13px; line-height: 1.74; color: #647168; }
+.hero-actions { gap: 9px; margin-top: 22px; }
+.button { border-radius: 4px; padding: 10px 15px; gap: 13px; font-size: 12px; font-weight: 500; }
+.button:hover { transform: none; }
+.button-primary { background: #294534; }
+.button-secondary { background: #fff; }
+.hero-byline { margin-top: 25px; padding-top: 14px; border-top: 1px solid var(--line); }
+.avatar-stack { display: none; }
+.hero-visual { border: 1px solid var(--line); border-radius: 5px; box-shadow: none; transform: none; }
+.visual-top, .visual-bottom { padding: 11px 14px; }
+.visual-top { background: #fafbf9; font-size: 9px; letter-spacing: .045em; }
+.visual-figure { padding: 12px 7px; height: 315px; }
+.visual-caption { font-size: 10px; color: #6d786f; padding: 0 14px 12px; }
+.metric-strip { padding: 0; border-radius: 0; background: #fafbf9; box-shadow: none; border: 1px solid var(--line); border-left: 0; border-right: 0; }
+.hero-metric { padding: 19px 18px; border-color: var(--line); }
+.hero-metric strong { font-weight: 500; font-size: 32px; letter-spacing: -.055em; color: #31503d; }
+.hero-metric span { color: #6a776f; font-size: 10px; }
+.section { padding: 64px 0; border-bottom: 1px solid #edf0eb; }
+.muted-section { background: #fafbf9; }
+.section-heading { margin-bottom: 28px; }
+.section-heading-split { display: block; }
+.section-heading-split .section-intro { max-width: 680px; margin-top: 14px; }
+.section-heading h2, .case-copy h2, .privacy-section h2, .resources-section h2 {
+  font-size: clamp(29px, 3.25vw, 41px) !important;
+  font-weight: 500 !important;
+  line-height: 1.2;
+}
+.kicker { font-size: 10px; color: #a75d40; margin-bottom: 10px; }
+.section-intro, .section-description { color: #657269; font-size: 13.5px; line-height: 1.7; }
+.question-bar { background: #f7faf7; border: 1px solid var(--line); border-left: 3px solid #6b896e; border-radius: 4px; padding: 17px 20px; }
+.question-bar p { font-size: 16px; font-weight: 500; }
+.challenge-grid, .method-grid, .result-summary, .figure-grid { gap: 10px; }
+.challenge-card, .method-card, .big-result, .data-panel, .copilot-panel,
+.privacy-plot, .network-figure, .network-insights, .evidence-type,
+.case-figure, .poster-card, .figure-card, .roadmap-step,
+.copilot-flow > div, .copilot-metrics > div, .wiki-metrics > div,
+.case-metrics > div, .extension, .abstract-block details {
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  background: #fff;
+  box-shadow: none;
+}
+.challenge-card { padding: 20px; }
+.challenge-card h3, .method-card h3 { font-size: 15px; font-weight: 600 !important; }
+.challenge-card p, .method-card p { font-size: 12px; line-height: 1.68; }
+.method-card { min-height: 190px; padding: 18px 15px; }
+.method-reference { background: #fbfaf8; }
+.method-bottom { background: #f6f8f4; border: 1px solid var(--line); border-radius: 4px; }
+.big-result { min-height: 135px; padding: 18px; }
+.big-result span { font-size: 11px; font-weight: 500; }
+.big-result strong { font-size: 36px; font-weight: 500; letter-spacing: -.045em; color: #31523c; }
+.highlight-result { background: #f5f8f3; }
+.panel-top h3 { font-size: 17px; font-weight: 500 !important; }
+.panel-label, .mini-label { font-size: 9px; }
+.chart-track, .shap-meter, .privacy-track { border-radius: 2px; background: #edf0eb; }
+.bar, .shap-meter i, .privacy-track i { border-radius: 2px; }
+.bar.core { background: #a8b7a8; }
+.bar.augmented { background: #bb7451; }
+.shap-row:first-child .shap-meter i { background: #bb7451; }
+.panel-pill, .filter-button, .evidence-type, .network-highlight,
+.case-conclusion, .privacy-warning, .closing-banner,
+.resource-icon, .lightbox-inner { border-radius: 5px; box-shadow: none; }
+.figure-card:hover { transform: none; border-color: #9aada0; }
+.filter-button.active { background: #2e513d; }
+.figure-notice { font-size: 10px; }
+.closing-banner { text-align: left; padding: 48px 0; color: #223326; background: #f5f8f4; border-block: 1px solid var(--line); }
+.closing-banner h2 { font-size: clamp(25px, 3vw, 38px); font-weight: 500 !important; }
+.closing-banner em { color: #517059; }
+.closing-banner p { color: #657469; }
+.closing-mark { display: none; }
+.site-footer { padding: 42px 0 22px; background: #212e26; }
+.footer-bottom { font-size: 9px; }
+@media (max-width: 1020px) {
+  .container { width: calc(100% - 48px); }
+  .hero-layout { gap: 26px; }
+  .site-nav { gap: 12px; }
+}
+@media (max-width: 920px) {
+  .site-header { height: 64px; }
+  .site-nav { top: 64px; }
+  .hero-layout { grid-template-columns: minmax(0, 1fr); padding-bottom: 38px; }
+  .hero { padding-top: 43px; }
+  .section-heading-split { display: block; }
+  .metric-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 680px) {
+  .container { width: calc(100% - 34px); }
+  .hero { padding-top: 32px; }
+  .hero h1 { font-size: clamp(34px, 9vw, 46px) !important; }
+  .hero-subtitle { font-size: 16px; }
+  .hero-visual { width: 100%; min-width: 0; }
+  .visual-figure { height: 230px; }
+  .section { padding: 49px 0; }
+  .section-heading h2, .case-copy h2, .privacy-section h2, .resources-section h2 { font-size: 30px !important; }
+  .big-result { min-height: 130px; padding: 14px; }
+  .big-result strong { font-size: 30px; }
+  .method-card { min-height: 0; }
+  .closing-banner { padding: 42px 0; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  </style>
   <title>AI-Assisted CPO Transmission · i-AIM 2026 Research</title>
 </head>
 <body>
